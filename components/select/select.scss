@@ -1,0 +1,58 @@
+.selectBox{
+  width: 100px;
+  display: inline-block;
+  position: relative;
+  label{
+    position: relative;
+    width: 100%;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    line-height: 28px;
+    height: 28px;
+    border-radius: 3px;
+    border: 1px solid #c1c1c1;
+    padding-left: 10px;
+  }
+  label:after{
+    position: absolute;
+    right: 5px;
+    top: 0;
+    content: '\25BC';
+    color:#999;
+    font-size: 10px;
+  }
+  label.openOption{
+    border-bottom-color: #e6e6e6;
+    border-radius: 3px 3px 0 0;
+  }
+  label.openOption:after{
+    content: '\25B2';
+  }
+
+  ul{
+    width: 110%;
+    padding: 0;
+    position: absolute;
+    left: 0;
+    top: 29px;
+    z-index: 200;
+    border-radius:0 0 3px 3px;
+    border: 1px solid #c1c1c1;
+    border-top: none;
+    font-size: 14px;
+    li{
+      list-style: none;
+      padding-left: 10px;
+      line-height: 23px;
+      background-color: white;
+    }
+    li:hover{
+      background-color: #ebf5ff;
+      cursor: pointer;
+    }
+    .active{
+      background-color: #f5faff;
+    }
+  }
+}

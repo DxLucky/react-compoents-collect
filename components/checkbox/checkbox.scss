@@ -1,0 +1,45 @@
+$checkBox-select-color:#f73352;
+$checkBox-border-color:#ddd;
+$checkBox-lable-color:#666;
+$checkBox-lable-font-size:14px;
+$checkBox-size:14px;
+$checkBox-out-size:$checkBox-size+2;
+div.checkBox {
+  overflow: hidden;
+  height: $checkBox-out-size;
+  display: inline-block;
+  >span:first-child{
+    display: inline-block;
+    width: $checkBox-size;
+    height: $checkBox-size;
+    border: 1px solid $checkBox-border-color;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all .2s linear;
+    margin-right: 5px;
+    position: relative;
+    &:hover{
+      border: 1px solid $checkBox-select-color;
+      transition: all .2s linear;
+    }
+  }
+  >span.Checked{
+    background-color: $checkBox-select-color;
+    border: 1px solid $checkBox-select-color;
+  }
+  >span.Checked:after{
+    position: absolute;
+    top: -4px;
+    left: 2px;
+    content: '\2714';
+    font-size: 14px;
+    color: white;
+  }
+  >span:last-child{
+    font-size: $checkBox-lable-font-size;
+    color: $checkBox-lable-color;
+    cursor: pointer;
+    position: relative;
+    top: -3px;
+  }
+}

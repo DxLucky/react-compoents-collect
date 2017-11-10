@@ -1,0 +1,28 @@
+@import "../../asset/style/common.scss";
+div#asideNav{
+    background-color: #202731;
+    width: 220px;
+    border-radius: 6px;
+    border: 1px solid #202731;
+    overflow: hidden;
+    float: left;
+    margin-right: 20px;
+  >div{
+      >p{
+          font-size: 18px;
+          font-weight: bold;
+          color: white;
+          margin-left: 15px;
+          margin-top: 5px;
+      }
+      >ul{
+          margin:10px 0 0 25px;
+          li{
+              margin-bottom: 10px;
+          }
+      }
+  }
+}
+
+
+
