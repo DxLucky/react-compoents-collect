@@ -57,8 +57,11 @@ class AlertBox extends React.Component{
         return(
             <div className="modalOuter" ref="msgModal" style={{opacity:opacity}}>
                 <div>
-                    <span onClick={this.closeAlert}></span>
-                    <p>{this.props.msg}</p>
+                    <span className="closeTips" onClick={this.closeAlert}></span>
+                    <p>
+                        <img src={require("./tips.png")}/>
+                        {this.props.msg}
+                        </p>
                 </div>
             </div>
         )

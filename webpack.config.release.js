@@ -10,8 +10,9 @@ module.exports={
     },
     output:{
         path:path.resolve(process.cwd(),"dist"),
-        filename:"[name].[chunkhash:8].js",
-        publicPath:"."
+        filename:"[name].min.js",
+        publicPath:"./",
+        chunkFilename: '[name].[chunkhash:5].js'
     },
     resolve: {
         extensions: ['.js','.jsx']
@@ -24,7 +25,6 @@ module.exports={
                 use:[
                     {
                         loader:"babel-loader",
-                        options:{presets:["es2015","react"]}
                     }
                 ]
             },
@@ -67,6 +67,12 @@ module.exports={
         ]
     },
     plugins:[
+        new webpack.DefinePlugin({
+            'process.env':{
+                'NODE_ENV': JSON.stringify('production'), //production & development,
+                'PUBLIC_PATH': JSON.stringify('http://127.0.0.1')
+            }
+        }),
         //从js中抽离css,属性disable为true表示禁用此插件并不抽离css，为false表示不禁用此插件，抽离css并打包成单独的css文件
         new ExtractTextPlugin({
             filename: "[name].min.css",
@@ -94,7 +100,15 @@ module.exports={
             }
         }),
         new HtmlWebpackPlugin({
-            template: 'src/indexModal.html'
+            template: 'src/indexModal.html',
+            inject:'body',
+            chunks:['main','vendor'],
+            hash:true,
+            filename:path.join(__dirname,'./dist/index.html'),
+            minify:{
+                removeComments:true,
+                collapseWhitespace:true
+            }
         })
     ],
     devtool:"sourceMap"

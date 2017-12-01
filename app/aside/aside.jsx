@@ -9,7 +9,10 @@ class Aside extends React.Component{
         return(
             <div id="asideNav">
                 <div>
-                    <p>组件列表</p>
+                    <p>
+                        组件列表
+                        <NavLink to="/"><img src={require("../../asset/images/home.png")}/></NavLink>
+                    </p>
                     <ul>
                         <li>
                             <NavLink to="/selcet" activeStyle={{color: '#f73352'}}>下拉选择框</NavLink>

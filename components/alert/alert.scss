@@ -1,43 +1,43 @@
-$width:300px;
-$height:80px;
 .modalOuter{
-  width: $width;
-  height: $height;
   position: fixed;
-  left: 50%;
-  top: 50%;
-  margin-left: -$width*0.5;
-  margin-top: -$height*0.5;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
   z-index: 999;
-  border-radius: 5px;
-  background: rgba(76,76,76,0.6);
-  box-shadow: -4px 4px 4px rgba(0,0,0,.2);
-  background-image: url("tips.png");
-  background-repeat: no-repeat;
-  background-position: 20px 25px;
+  justify-content: center;
   >div{
-    position: relative;
-    >span{
-      display: inline-block;
+    z-index: 999;
+    min-width: 200px;
+    max-width: 400px;
+    border-radius: 5px;
+    background: rgba(76,76,76,0.6);
+    box-shadow: 0 0 15px rgba(0,0,0,0.15);
+    text-align: right;
+    >p{
+      text-align: left;
+      color: white;
+      margin: 0 20px 20px 20px;
+      >img{
+        vertical-align: middle;
+        overflow: hidden;
+        margin-right: 10px;
+      }
+    }
+    >.closeTips{
       width: 12px;
       height: 12px;
-      overflow: hidden;
-      position: absolute;
-      top: 10px;
-      right: 10px;
+      display: inline-block;
+      margin: 10px 10px 0 0;
       background-image: url("./close.png");
       background-repeat: no-repeat;
       background-position: 0 0;
-    }
-    >span:hover{
-      cursor: pointer;
-      background-position: 0 -14px;
-    }
-    >p{
-      color: white;
-      line-height: $height;
-      text-align: left;
-      margin-left: 60px;
+      &:hover{
+        cursor: pointer;
+        background-position: 0 -14px;
+      }
     }
   }
 }

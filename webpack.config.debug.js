@@ -9,9 +9,14 @@ entry[1]="webpack/hot/only-dev-server";
 module.exports={
     entry:entry,
     output:{
-        path:path.join(__dirname,"dist"),
+        path:path.join(__dirname,"dist"), // 将构建打包输出的app.js放到build目录下
+        // 可以对构建输出的app.js进行二次定制化命名，比如加时间戳等
         filename:"[name].js",
-        publicPath:"/static/"
+        // webpack构建输出的临时文件存放到内存中，而且是以publicPath作为相对路径。
+        // publicPath并不会影响输出目录
+        // 此外，如果指定路径下已经存在了相同文件，webpack会优先使用内存的临时文件
+        publicPath:"/static/",
+        chunkFilename: '[name].[chunkhash:5].js'
     },
     module:{
         rules:[
@@ -20,8 +25,7 @@ module.exports={
                 exclude: /(node_modules)/,
                 use:[
                     {
-                        loader:"babel-loader",
-                        options:{presets:["es2015","react"]}
+                        loader:"babel-loader"
                     }
                 ]
             },
@@ -67,6 +71,12 @@ module.exports={
     },
     plugins:[
         new webpack.HotModuleReplacementPlugin(),//热加载
+        new webpack.DefinePlugin({
+            'process.env':{
+                'NODE_ENV': JSON.stringify('development'), //production & development,
+                'PUBLIC_PATH': JSON.stringify('http://127.0.0.1')
+            }
+        }),
         //从js中抽离css,属性disable为true表示禁用此插件并不抽离css，为false表示不禁用此插件，抽离css并打包成单独的css文件
         new ExtractTextPlugin({
             filename: "[name].css",

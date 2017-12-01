@@ -18,7 +18,7 @@ class AlertExample extends React.Component{
         })
     }
     showAlert(){
-        this.componentAlert("请查询之后选择");
+        this.componentAlert("请查询之后选择请查询之后选择请查询之后选择请查询之后选择请查询之后选择请查询之后选择");
     }
     showAlertVar(){
         let data={tip:"这是错误提示"};
