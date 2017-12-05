@@ -23,6 +23,9 @@ class Aside extends React.Component{
                         <li>
                             <NavLink to="/checkbox" activeStyle={{color: '#f73352'}}>复选框</NavLink>
                         </li>
+                        <li>
+                            <NavLink to="/table" activeStyle={{color: '#f73352'}}>表格</NavLink>
+                        </li>
                     </ul>
                 </div>
             </div>

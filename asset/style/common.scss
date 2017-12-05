@@ -1,10 +1,26 @@
 *{font-family: "Helvetica Neue",Helvetica,Arial,microsoft yahei,simsun;padding: 0;margin: 0;color: #333}
 li{list-style: none}
 button,input,select{outline: none}
+@mixin flexItem{
+  display: flex;
+  justify-content:flex-start;
+  align-items:flex-start;
+}
+
 a{
   text-decoration: none;
   color: white;
   &:hover{
     color: #f73352;
+  }
+}
+#mainBox{
+  >.bodyBox{
+    margin: 30px 0 0 30px;
+    @include flexItem;
+    >div:last-child{
+      margin-left: 20px;
+      width: 100%;
+    }
   }
 }

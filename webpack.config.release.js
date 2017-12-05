@@ -6,7 +6,7 @@ const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');//
 module.exports={
     entry:{
         main:"./src/main.jsx",
-        vendor: ['react', 'react-dom','react-router-dom']
+        vendor: ['react', 'react-dom','react-router-dom','underscore']
     },
     output:{
         path:path.resolve(process.cwd(),"dist"),
@@ -46,11 +46,11 @@ module.exports={
                             }
                         }
                     ],
-                    publicPath: '../dist' //修改css中如背景图片的路径引用
+                    publicPath: './' //修改css中如背景图片的路径引用
                 })
             },
             {
-                test: /\.png|jpg|gif|jpeg|ico$/,
+                test: /\.png|jpg|gif|svg|jpeg|ico$/,
                 use:[{
                         loader : 'url-loader',//加载url-loader 同时安装 file-loader;
                         options:{
@@ -97,10 +97,17 @@ module.exports={
             sourceMap:true,
             output:{
                 ascii_only:true
+            },
+            compress: {//去处警告，打印登调试信息
+                warnings: false,
+                drop_debugger: true,
+                drop_console: true
             }
         }),
         new HtmlWebpackPlugin({
-            template: 'src/indexModal.html',
+            title:'Components-Collect',
+            template:'src/template.html',
+            // favicon:'asset/images/favicon.ico',
             inject:'body',
             chunks:['main','vendor'],
             hash:true,

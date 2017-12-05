@@ -1,3 +1,5 @@
+@import "../../asset/style/dominant.scss";
+
 .selectBox{
   width: 100px;
   display: inline-block;
@@ -11,7 +13,7 @@
     line-height: 28px;
     height: 28px;
     border-radius: 3px;
-    border: 1px solid #c1c1c1;
+    border: 1px solid $select-borderColor;
     padding-left: 10px;
   }
   label:after{
@@ -23,7 +25,7 @@
     font-size: 10px;
   }
   label.openOption{
-    border-bottom-color: #e6e6e6;
+    border-bottom-color: $select-cutOff-lineColor;
     border-radius: 3px 3px 0 0;
   }
   label.openOption:after{
@@ -35,12 +37,14 @@
     padding: 0;
     position: absolute;
     left: 0;
-    top: 29px;
+    top: 30px;
     z-index: 200;
     border-radius:0 0 3px 3px;
-    border: 1px solid #c1c1c1;
+    border: 1px solid $select-borderColor;
     border-top: none;
     font-size: 14px;
+    max-height: 230px;
+    overflow-y: auto;
     li{
       list-style: none;
       padding-left: 10px;
@@ -48,11 +52,32 @@
       background-color: white;
     }
     li:hover{
-      background-color: #ebf5ff;
+      background-color: $select-hoveBgColor;
       cursor: pointer;
     }
     .active{
-      background-color: #f5faff;
+      background-color: $select-activeBgColor;
+    }
+    li.loadMore{
+      text-align: center;
+      color: $select-loadMore-fontColor;
+      transition: all .1s linear;
+      .iconfont{
+        color:$select-loadMore-fontColor;
+        font-size: 14px;
+        display: inline-block;
+        margin-right: 5px;
+        transition: all .1s linear;
+      }
+      &:hover{
+        .iconfont{
+          color: $dominant-hue;
+          transition: all .1s linear;
+        }
+        color: $dominant-hue;
+        background-color: white;
+        transition: all .1s linear;
+      }
     }
   }
 }

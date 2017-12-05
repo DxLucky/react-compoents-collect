@@ -6,7 +6,7 @@ class Select extends React.Component{
         super(props);
         this.state={
             isShowOption:false,
-            selectValue:this.props.defaultSelect
+            selectValue:''
         };
         this.changeOptionShow=this.changeOptionShow.bind(this);
         this.onSelect=this.onSelect.bind(this);
@@ -33,25 +33,24 @@ class Select extends React.Component{
             selectValue:e.target.innerText,
             isShowOption:!this.state.isShowOption
         });
-        this.props.onSelectChange(this.props.sendField,e.target.innerText)
-    }
-    resetSelect() {
-        this.setState({
-            selectValue:'全部'
-        })
+        this.refs.labelSelect.innerText = e.target.innerText;
+        let selectItem = this.props.optionGroup.find((item)=>{
+            return item.value == e.target.innerText
+        });
+        this.props.onSelectChange && this.props.onSelectChange(selectItem,this.props.sendField?this.props.sendField:undefined)
     }
     render(){
         let {isShowOption,selectValue}=this.state;
-        let {optionGroup}=this.props;
+        let {optionGroup,width}=this.props;
         return(
-            <div className={classNames('selectBox',this.props.className)}>
-                <label onClick={this.changeOptionShow} className={classNames({openOption:isShowOption})}>{selectValue}</label>
+            <div style={{width:width?width:""}} className={classNames('selectBox',this.props.className)}>
+                <label onClick={this.changeOptionShow} className={classNames({openOption:isShowOption})} ref="labelSelect">{this.props.defaultSelect}</label>
                 {isShowOption?
-                    <ul>
+                    <ul style={{width:width?width:""}}>
                         {
                             optionGroup.map((item)=>{
                                 return(
-                                    <li key={item.value} onClick={this.onSelect} className={classNames({active:item.name==selectValue})}>{item.name}</li>
+                                    <li key={`${item.value}${item.id}`} onClick={this.onSelect} className={classNames({active:item.value==(selectValue==''?this.props.defaultSelect:selectValue)})}>{item.value}</li>
                                 )
                             })
                         }

@@ -1,7 +1,6 @@
 import React from "react";
 import Aside from "../app/aside/aside.jsx";
-import "../asset/style/main.scss";
-import PropTypes from "prop-types";
+import "../asset/style/common.scss";
 class Layout extends React.Component{
     constructor(props){
         super(props)
@@ -11,16 +10,13 @@ class Layout extends React.Component{
             <div id="mainBox">
                 <div className="bodyBox">
                     <Aside/>
-                    <section>
+                    <div>
                         {this.props.children}
-                    </section>
+                    </div>
                 </div>
             </div>
         )
     }
 }
-Layout.propTypes={
-    router:PropTypes.object
-};
 
 export default Layout;

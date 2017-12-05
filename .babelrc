@@ -1,4 +1,13 @@
 {
-  "presets": ["es2015", "react"],
-  "plugins": ["transform-object-rest-spread"]
+  "presets": [
+    "react",
+    ["env", {
+      "targets": {
+        "modules": false,
+        "browsers": ["last 5 versions", "ie >= 8"],
+        "useBuiltIns":"entry"
+      }
+    }],
+    "stage-0"
+  ]
 }

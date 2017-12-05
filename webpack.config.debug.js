@@ -46,11 +46,12 @@ module.exports={
                                 }
                             }
                         }
-                    ]
+                    ],
+                    // publicPath: './asset' //修改css中如背景图片的路径引用
                 })
             },
             {
-                test: /\.png|jpg|gif|jpeg|ico$/,
+                test: /\.png|jpg|gif|svg|jpeg|ico$/,
                 use:[{
                     loader : 'url-loader',//加载url-loader 同时安装 file-loader;
                     options:{

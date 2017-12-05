@@ -1,0 +1,92 @@
+{
+  "success": true,
+  "errorMsg": null,
+  "errorCode": null,
+  "errorType": 0,
+  "result": {
+    "page": 1,
+    "total": 1,
+    "records": 7,
+    "resMsg": null,
+    "status": true,
+    "data": [
+      {
+        "id": 628,
+        "name": "cs2222222gg1",
+        "code": "1711000219",
+        "projectState": 1,
+        "referenceCode": "",
+        "chargeUnit": "CNY",
+        "content": "cs666",
+        "projectManagerId": "10269292",
+        "projectManagerName": "Joker"
+      },
+      {
+        "id": 622,
+        "name": "test1",
+        "code": "1711000213",
+        "projectState": 2,
+        "referenceCode": "001",
+        "chargeUnit": "CNY",
+        "content": "我的项目",
+        "projectManagerId": "10269292",
+        "projectManagerName": "Joker"
+      },
+      {
+        "id": 613,
+        "name": "测试创建权限是否生成",
+        "code": "1711000204",
+        "projectState": 3,
+        "referenceCode": "",
+        "chargeUnit": "CNY",
+        "content": "测试创建权限是否生成",
+        "projectManagerId": "10269292",
+        "projectManagerName": "Joker"
+      },
+      {
+        "id": 606,
+        "name": "智能手机官网平台项目1",
+        "code": "1711000197",
+        "projectState": 2,
+        "referenceCode": "",
+        "chargeUnit": "CNY",
+        "content": "智能手机官网平台项目1",
+        "projectManagerId": "10219292",
+        "projectManagerName": "Joker"
+      },
+      {
+        "id": 596,
+        "name": "111",
+        "code": "1710000187",
+        "projectState": 3,
+        "referenceCode": "",
+        "chargeUnit": "CNY",
+        "content": "2222",
+        "projectManagerId": "10269292",
+        "projectManagerName": "Joker"
+      },
+      {
+        "id": 597,
+        "name": "111",
+        "code": "1710000187",
+        "projectState": 1,
+        "referenceCode": "",
+        "chargeUnit": "CNY",
+        "content": "2222",
+        "projectManagerId": "10269292",
+        "projectManagerName": "Joker"
+      },
+      {
+        "id": 598,
+        "name": "111",
+        "code": "1710000187",
+        "projectState": 2,
+        "referenceCode": "",
+        "chargeUnit": "CNY",
+        "content": "2222",
+        "projectManagerId": "10269292",
+        "projectManagerName": "Joker"
+      }
+    ]
+  }
+}
