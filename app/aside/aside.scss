@@ -1,30 +1,51 @@
 @import "../../asset/style/common.scss";
+@import "../../asset/style/dominant.scss";
 div#asideNav{
-    background-color: #202731;
-    width: 220px;
-    border-radius: 6px;
-    border: 1px solid #202731;
+    background-color: $nav-bgColor;
+    width: 200px;
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border: 1px solid $nav-bgColor;
     overflow: hidden;
-  >div{
+    border-radius: 0 0 6px 0;
+    >div.logArea{
+        margin-bottom: 30px;
+        img{
+            margin-top: 20px;
+            cursor: pointer;
+        }
+    }
+    >div.nav{
+        padding-left: 25px;
       >p{
           font-size: 18px;
           font-weight: bold;
           color: white;
-          margin-left: 15px;
           margin-top: 5px;
-          img{
-              float: right;
-              margin-right: 5px;
-              cursor: pointer;
-          }
       }
       >ul{
-          margin:10px 0 0 25px;
+          margin:10px 0 0 10px;
           li{
               margin-bottom: 10px;
           }
       }
   }
+    >.iconfont{
+        color: #fff;
+        font-size: 22px;
+        position: fixed;
+        bottom: 15px;
+        left: 10px;
+        cursor: pointer;
+        transition: all .1s linear;
+        &:hover{
+            color: $dominant-hue;
+            transition: all .1s linear;
+        }
+    }
 }
 
 

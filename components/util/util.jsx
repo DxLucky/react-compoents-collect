@@ -1,5 +1,4 @@
 import "whatwg-fetch";
-import 'babel-polyfill';
 import Alert from "../../components/alert/alert.jsx";
 
 module.exports = {
@@ -9,11 +8,6 @@ module.exports = {
             timeout:20,
             fade:true
         })
-    },
-    isEmptyObj(obj){//判断一个对象是否为空
-        let arr = Object.keys(obj);
-        if(arr.length==0){return true}
-        else {return false}
     },
     fetchHandler(payload){//fetch请求封装
         let _this=this;
@@ -51,6 +45,7 @@ module.exports = {
             .then(checkStatus)
             .then(parseJSON)
             .then((data)=>{
+            console.log(data,'1113')
                 if(!data.success){
                     if(payload.error){
                         payload.error(data);

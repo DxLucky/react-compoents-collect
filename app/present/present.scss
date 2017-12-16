@@ -1,0 +1,19 @@
+@import "../../asset/style/dominant.scss";
+.present{
+  margin-bottom: 20px;
+  h4{
+    margin: 15px 0 7px 0;
+    &:last-child{
+      border-bottom: 1px dashed $cutApart-line-color;
+      line-height: 32px;
+      margin-top: 10px;
+    }
+  }
+  span{
+    display: inline-block;
+    text-indent:2em;
+    margin-right: 100px;
+    border-top: 1px solid $cutApart-line-color;
+    color: $cutApart-line-color;
+  }
+}

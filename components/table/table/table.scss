@@ -1,8 +1,13 @@
-@import "../../../asset/style/dominant.scss";
-
+$header-bootom-line-color:#d8d8d8;
+$column-hover-bgColor:#fee5e9;
+$form-th-bgColor:#f8f8f8;//表格表头背景颜色
+$td-border-color:#eee;//表格td边框色
+$table-column-min-width:50px;//表格默认最小列宽
+$label-table-fontColot:#626161;
+$font-default-color: #6f6f79;//字体默认颜色
+$table-header-bg-color:#e1e9f4;//表格头部颜色
 //表格样式
 .table-mod{
-  overflow: hidden;
   overflow-y: hidden;
   overflow-x: auto;
   min-height:1%;
@@ -12,7 +17,7 @@
     border:1px solid $header-bootom-line-color;
     tr{
       &:hover{
-        background-color: $calender-select-hover-bgColor;
+        background-color: $column-hover-bgColor;
         transition: background-color .1s linear;
       }
       background-color: transparent;
@@ -92,7 +97,7 @@
         background-color: #3fc7fa;
         &:hover{
           td{
-            background-color: $calender-select-hover-bgColor;
+            background-color: $column-hover-bgColor;
             transition: background-color .1s linear;
           }
         }

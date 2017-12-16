@@ -1,6 +1,8 @@
-
-@import "../../../asset/style/dominant.scss";
-
+$dominant-hue:#f73352;
+$font-default-color: #6f6f79;//字体默认颜色
+$pagination-fontColor:#5c5c5c;//分页字体颜色
+$header-bootom-line-color:#d8d8d8;
+$button-hover-bgColor:#fee5e9;
 //分页样式
 .pagination-mod{
   padding: 20px 20px;
@@ -75,8 +77,8 @@
       cursor: pointer;
       &:hover{
         color: $font-default-color;
-        border-color: $calender-select-hover-bgColor;
-        background-color: $calender-select-hover-bgColor;
+        border-color: $button-hover-bgColor;
+        background-color: $button-hover-bgColor;
       }
     }
     .button.min{

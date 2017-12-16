@@ -96,10 +96,8 @@ class Pagination extends React.Component{
         this.props.onPageChange(pagination);
     }
   reset(pageNo){
-      this.setState({
-          pageNo:pageNo || 1,
-          notSearch: true
-      });
+      this.state.pageNo =pageNo || 1;
+      this.state.notSearch=true;
   }
   paging(action){
         let { pageNo } = this.state;

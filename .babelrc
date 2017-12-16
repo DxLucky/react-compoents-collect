@@ -1,13 +1,11 @@
 {
   "presets": [
-    "react",
     ["env", {
       "targets": {
-        "modules": false,
-        "browsers": ["last 5 versions", "ie >= 8"],
-        "useBuiltIns":"entry"
+        "browsers": ["last 5 versions", "ie >= 10"]
       }
     }],
-    "stage-0"
+    "stage-0",
+    "react"
   ]
 }

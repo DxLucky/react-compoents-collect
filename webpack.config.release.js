@@ -34,7 +34,8 @@ module.exports={
                     fallback: "style-loader",
                     use: [
                         "css-loader?importLoaders=1",
-                        "sass-loader",
+                        "resolve-url-loader",
+                        "sass-loader?sourceMap",
                         {
                             loader: "postcss-loader",//自动补全css浏览器前缀
                             options: {

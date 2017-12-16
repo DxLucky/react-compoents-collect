@@ -1,5 +1,9 @@
-@import "../../asset/style/dominant.scss";
-
+$select-borderColor:#999;
+$select-cutOff-lineColor:#e6e6e6;
+$select-borderColor:#999;
+$select-cutOff-lineColor:#e6e6e6;
+$select-hoveBgColor:#ebf5ff;
+$select-activeBgColor:#f5faff;
 .selectBox{
   width: 100px;
   display: inline-block;
@@ -14,7 +18,7 @@
     height: 28px;
     border-radius: 3px;
     border: 1px solid $select-borderColor;
-    padding-left: 10px;
+    text-indent: 10px;
   }
   label:after{
     position: absolute;
@@ -33,7 +37,7 @@
   }
 
   ul{
-    width: 110%;
+    width: 100%;
     padding: 0;
     position: absolute;
     left: 0;
@@ -57,27 +61,6 @@
     }
     .active{
       background-color: $select-activeBgColor;
-    }
-    li.loadMore{
-      text-align: center;
-      color: $select-loadMore-fontColor;
-      transition: all .1s linear;
-      .iconfont{
-        color:$select-loadMore-fontColor;
-        font-size: 14px;
-        display: inline-block;
-        margin-right: 5px;
-        transition: all .1s linear;
-      }
-      &:hover{
-        .iconfont{
-          color: $dominant-hue;
-          transition: all .1s linear;
-        }
-        color: $dominant-hue;
-        background-color: white;
-        transition: all .1s linear;
-      }
     }
   }
 }

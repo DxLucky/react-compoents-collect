@@ -1,4 +1,10 @@
-*{font-family: "Helvetica Neue",Helvetica,Arial,microsoft yahei,simsun;padding: 0;margin: 0;color: #333}
+@import "dominant.scss";
+*{
+  font-family: "Helvetica Neue",Helvetica,Arial,microsoft yahei,simsun;
+  padding: 0;
+  margin: 0;
+  color: #333
+}
 li{list-style: none}
 button,input,select{outline: none}
 @mixin flexItem{
@@ -11,16 +17,33 @@ a{
   text-decoration: none;
   color: white;
   &:hover{
-    color: #f73352;
+    color: $dominant-hue;
   }
+}
+body{
+  background-color: #e3d3ba;
 }
 #mainBox{
   >.bodyBox{
-    margin: 30px 0 0 30px;
     @include flexItem;
     >div:last-child{
-      margin-left: 20px;
+      margin-left: 220px;
       width: 100%;
+    }
+  }
+  button{
+    border: 1px solid $button-line-color;
+    background-color: transparent;
+    height: 28px;
+    padding: 0 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all .1s linear;
+    margin-right: 10px;
+    &:hover{
+      border: 1px solid $dominant-hue;
+      color: $dominant-hue;
+      transition: all .1s linear;
     }
   }
 }

@@ -1,6 +1,6 @@
 const baseUrl = "http://"+window.location.host;
 module.exports = {
-    login:baseUrl+'/manhour/login',
+    login:"../mokeJson/login.json",
     getTableData:"../mokeJson/tableJson.json"
 };
 

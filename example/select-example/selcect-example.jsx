@@ -1,6 +1,7 @@
 import React from "react";
+import Present from "../../app/present/present.jsx";
 import Select from "../../components/select/select.jsx";//下拉框
-
+import "./select-example.scss"
 class SelectExample extends React.Component{
     constructor(props){
         super(props);
@@ -19,7 +20,8 @@ class SelectExample extends React.Component{
         let {shareTypeValue,loadMore}=this.state;
         return(
             <div>
-                <Select className='goMeSelect'  ref="shareType"
+                <Present title="下拉选择框" introduce="当下拉选项超过一定数量时，出现滚动条"/>
+                <Select className='JokerSelect'  ref="shareType"
                         optionGroup={
                             [
                                 {name:'全部',value:'全部'},{name:'不找上级',value:'不找上级'},{name:'找上级',value:'找上级'}
@@ -29,9 +31,7 @@ class SelectExample extends React.Component{
                         sendField="shareTypeValue"
                         onSelectChange={this.onSelectChange}
                 />
-                <br/>
-                <br/>
-                <Select className='goMeSelect'  ref="shareType"
+                <Select className='JokerSelect'  ref="shareType"
                         optionGroup={
                             [
                                 {name:'1',value:'下拉1'},
