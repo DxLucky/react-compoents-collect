@@ -1,12 +1,16 @@
 $dominant-hue:#f73352;
+$btn-hue-hover-color:#ff667e;
 $dialog-shadow-bgColor:rgba(49,49,49,0.3);
-$dialog-width:500px;
+$dialog-width:400px;
 $dialog-border-color:#eee;
 $dialog-border-radius:5px;
 $dialog-box-shadow-color:rgba(255,255,255,0.3);
 $dialog-header-bgColor:#fafafa;
 $dialog-header-height:50px;
 $dialog-header-title-fontColor:#272733;
+$dialog-line-color:#e8e8e8;
+$dialog-btn-border-color:#d9d9d9;
+$dialog-btn-fontColor:#rgba(0, 0, 0, 0.65);
 @mixin fullScreen{
   left: 0;
   right: 0;
@@ -19,7 +23,7 @@ $dialog-header-title-fontColor:#272733;
   display: flex;
   flex-wrap:wrap;/*设置或检索伸缩盒对象的子元素超出父容器时是否换行,nowrap不换行，wrap换行*/
   justify-content:center ;/*space-between 头尾各靠两边，中间均分*//*flex-start | flex-end | center | space-between | space-around*/
-  align-content:center;//纵向显示方式
+  align-items:center;//纵向显示方式
   .modal-shadow{
     width: 100%;
     height: 100%;
@@ -30,7 +34,6 @@ $dialog-header-title-fontColor:#272733;
   }
   .modal-dialog{
     width:$dialog-width;
-    min-height: 200px;
     background-color: #fff;
     border-radius: $dialog-border-radius;
     box-shadow:$dialog-box-shadow-color;
@@ -42,14 +45,13 @@ $dialog-header-title-fontColor:#272733;
       display: flex;
       flex-wrap:nowrap;
       justify-content:space-between;
-      align-content:center;
+      align-items:center;
       padding: 0 15px;
       border-bottom: 1px solid $dialog-border-color;
       p{
         font-size: 18px;
         color: $dialog-header-title-fontColor;
         font-weight: 400;
-        line-height: $dialog-header-height;
       }
       .cancleSign:after{
         content: "\2716";
@@ -65,6 +67,40 @@ $dialog-header-title-fontColor:#272733;
     }
     section{
       padding:15px;
+    }
+    footer{
+      border-top: 1px solid $dialog-line-color;
+      text-align: center;
+      padding: 15px 0;
+      button{
+        border: 1px solid $dialog-btn-border-color;
+        background-color: transparent;
+        height: 28px;
+        padding: 0 10px;
+        border-radius: 5px;
+        cursor: pointer;
+        color: $dialog-btn-fontColor;
+        transition: all .1s linear;
+      }
+      button.btn-confirm{
+        border: 1px solid $dominant-hue;
+        background-color: $dominant-hue;
+        color: white;
+        transition: all .1s linear;
+        margin-right: 10px;
+        &:hover{
+          border: 1px solid $btn-hue-hover-color;
+          background-color: $btn-hue-hover-color;
+          transition: all .1s linear;
+        }
+      }
+      button.btn-cancel{
+        &:hover{
+          border: 1px solid $dominant-hue;
+          color: $dominant-hue;
+          transition: all .1s linear;
+        }
+      }
     }
   }
 }

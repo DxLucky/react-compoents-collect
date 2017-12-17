@@ -1,0 +1,65 @@
+$dominant-hue:#f73352;//主色调
+$table-border-color:#d8d8d8;//表格边框颜色
+$table-bgColor:#fff;//表格背景颜色
+$table-even-bgColor:#fdfcfc;//表格背景换色
+$table-fontColor:#626161;//表格字体颜色
+$table-fontSize:14px;//表格字体大小
+$thead-bgColor:#f8f8f8;//表头背景颜色
+$tr-hover-bgColor:#fee5e9;//每行移入背景颜色
+div.tableBox{
+  table{
+    font-size: $table-fontSize;
+    border:1px solid $table-border-color;
+    border-bottom: none;
+    background-color: $table-bgColor;
+    div.checkBox{
+      vertical-align: middle;
+      >span:first-child{
+        border: 1px solid $table-fontColor;
+        transition: all .1s linear;
+      }
+      >span.Checked{
+        border: 1px solid $dominant-hue;
+        transition: all .1s linear;
+      }
+    }
+    thead{
+      background-color: $thead-bgColor;
+      height: 50px;
+    }
+    th{
+      border-bottom: 1px solid $table-border-color;
+      color: $table-fontColor;
+    }
+  }
+  .tbodyControl{
+      text-align: center;
+       tr{
+         height: 40px;
+         transition: all .1s linear;
+         &:nth-child(even){background:$table-even-bgColor;}
+         &:hover{
+           background-color: $tr-hover-bgColor;
+           transition: all .1s linear;
+         }
+         td{
+           color: $table-fontColor;
+           border-bottom: 1px solid $table-border-color;
+         }
+       }
+  }
+}
+div.hasBoder{
+    th{
+      border-right:1px solid $table-border-color;
+      &:last-child{
+        border-right: none;
+      }
+    }
+    td{
+      border-right:1px solid $table-border-color;
+      &:last-child{
+        border-right: none;
+      }
+    }
+}

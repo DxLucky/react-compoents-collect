@@ -1,0 +1,118 @@
+{
+  "success":true,
+  "result":{
+    "page": 1,
+    "total": 12,
+    "records": 7,
+    "list":[
+      {
+        "id":1,
+        "name":"John Brown",
+        "age":20,
+        "sex":"male",
+        "address":"New York No. 1 Lake Park",
+        "hobby":"电影",
+        "state":1
+      },
+      {
+        "id":2,
+        "name":"Jim Green",
+        "age":22,
+        "sex":"female",
+        "address":"London No. 1 Lake Park",
+        "hobby":"旅游，摄影",
+        "state":2
+      },
+      {
+        "id":3,
+        "name":"Joe Black",
+        "age":23,
+        "sex":"male",
+        "address":"Sidney No. 1 Lake Park",
+        "hobby":"音乐",
+        "state":2
+      },
+      {
+        "id":1,
+        "name":"John Brown",
+        "age":20,
+        "sex":"male",
+        "address":"New York No. 1 Lake Park",
+        "hobby":"电影",
+        "state":1
+      },
+      {
+        "id":2,
+        "name":"Jim Green",
+        "age":22,
+        "sex":"female",
+        "address":"London No. 1 Lake Park",
+        "hobby":"旅游，摄影",
+        "state":2
+      },
+      {
+        "id":3,
+        "name":"Joe Black",
+        "age":23,
+        "sex":"male",
+        "address":"Sidney No. 1 Lake Park",
+        "hobby":"音乐",
+        "state":2
+      },
+      {
+        "id":1,
+        "name":"John Brown",
+        "age":20,
+        "sex":"male",
+        "address":"New York No. 1 Lake Park",
+        "hobby":"电影",
+        "state":1
+      },
+      {
+        "id":2,
+        "name":"Jim Green",
+        "age":22,
+        "sex":"female",
+        "address":"London No. 1 Lake Park",
+        "hobby":"旅游，摄影",
+        "state":2
+      },
+      {
+        "id":3,
+        "name":"Joe Black",
+        "age":23,
+        "sex":"male",
+        "address":"Sidney No. 1 Lake Park",
+        "hobby":"音乐",
+        "state":2
+      },
+      {
+        "id":1,
+        "name":"John Brown",
+        "age":20,
+        "sex":"male",
+        "address":"New York No. 1 Lake Park",
+        "hobby":"电影",
+        "state":1
+      },
+      {
+        "id":2,
+        "name":"Jim Green",
+        "age":22,
+        "sex":"female",
+        "address":"London No. 1 Lake Park",
+        "hobby":"旅游，摄影",
+        "state":2
+      },
+      {
+        "id":3,
+        "name":"Joe Black",
+        "age":23,
+        "sex":"male",
+        "address":"Sidney No. 1 Lake Park",
+        "hobby":"音乐",
+        "state":2
+      }
+    ]
+  }
+}

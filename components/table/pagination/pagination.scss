@@ -1,116 +1,97 @@
 $dominant-hue:#f73352;
-$font-default-color: #6f6f79;//字体默认颜色
 $pagination-fontColor:#5c5c5c;//分页字体颜色
-$header-bootom-line-color:#d8d8d8;
+$font-number-fontColor: #272733;//数字颜色
+$pagination-fontSize:14px;
+$button-line-color:#999;
 $button-hover-bgColor:#fee5e9;
+$button-borderColor:#999;
+$button-raduis:5px;
+$button-height:25px;
+@mixin textFontStyle{
+  display: inline-block;
+  color: $pagination-fontColor;
+  font-size: $pagination-fontSize;
+  span.numberText{
+    display: inline-block;
+    margin: 0 5px;
+    color: $font-number-fontColor;
+  }
+}
+@mixin leftButtonInput{
+  background-color: transparent;
+  border: 1px solid $button-line-color;
+  text-align: center;
+  border-radius: $button-raduis;
+}
 //分页样式
-.pagination-mod{
-  padding: 20px 20px;
-  .operation{
-    padding: 0 0 6px 0;
-    b{padding: 0 10px}
-    span{
-      font-size:14px;
-      color: $pagination-fontColor;
-      label {
-        padding-left:8px;
+.pagination-area{
+  //border: 1px solid red;
+  //height: 100px;
+  margin-top: 15px;
+  padding: 0 10px;
+  display: flex;
+  flex-wrap:wrap;
+  justify-content:space-between;
+  align-items:center;
+  .leftItem{
+    p{
+      @include textFontStyle;
+    }
+    div.selectPage{
+      margin: 0 20px;
+      @include textFontStyle;
+      .JokerSelect{
+        margin:0 10px;
       }
-      select{
-        vertical-align: middle;
-        position: relative;
-        top:-1px;
-        width: 50px;
-        height: 28px;
-        padding:0 5px;
-        margin: 0 6px;
+    }
+    p.goPage{
+      input{
+        @include leftButtonInput;
+        height: $button-height;
+        width: 45px;
+        margin: 0 10px;
+      }
+      button{
+        height: $button-height+2px;
+        @include leftButtonInput;
+        cursor: pointer;
+        padding: 0 10px;
+        color: $pagination-fontColor;
+        &:hover{
+          border: 1px solid $button-hover-bgColor;
+          background-color: $button-hover-bgColor;
+        }
       }
     }
   }
-  .pull-left{
-    display:inline-block;
-    .confir{
-      background-color: transparent;
-      border: 1px solid $header-bootom-line-color;
-      border-radius: 3px;
-      width:50px;
-      height: 25px;
-      line-height: 25px;
-      margin-left: 10px;
-      font-size: 14px;
-      padding: 0;
-      color: $pagination-fontColor;
-      transition: all .1s linear;
+  .rightItem{
+    button{
+      height: $button-height+2px;
+      @include leftButtonInput;
       cursor: pointer;
-      &:hover{
-        border: 1px solid $dominant-hue;
-        color: $dominant-hue;
-        transition: all .1s linear;
-      }
-    }
-    .modalPagina{
-      padding-left: 5px;
-      margin-right: 5px;
-    }
-  }
-  .pull-right{
-    float: right;
-  }
-  .oper-gopage {
-    margin-left: 20px;
-    float:right;
-    input {
-      width: 48px;
-      height: 25px;
-      border-radius: 3px;
-      border: 1px solid $header-bootom-line-color;
-      text-align: center;
-      margin: 0 6px;
-      background-color: transparent;
-    }
-  }
-  .page-wrapper{
-    .button{
+      padding: 0 10px;
       color: $pagination-fontColor;
-      background-color: transparent;
-      border: 1px solid $header-bootom-line-color;
-      border-radius: 3px;
-      cursor: pointer;
       &:hover{
-        color: $font-default-color;
-        border-color: $button-hover-bgColor;
+        border: 1px solid $button-hover-bgColor;
         background-color: $button-hover-bgColor;
       }
     }
-    .button.min{
-      width: 30px;
-      min-width: 30px;
-      height: 25px;
-      line-height: 25px;
-      text-align: center;
-      padding: 0;
-      margin: 0 3px;
+    button.lastPage{
+      margin-right: 15px;
     }
-    .button.active{
+    button.nextPage{
+      margin-left: 5px;
+    }
+    button.numSign{
+      margin-right:10px;
+    }
+    button.active{
       background-color: $dominant-hue;
       color:#fff;
       border-color: $dominant-hue;
     }
-    .button.disabled{
+    button.notShow{
       display: none;
-    }
-    .prev{
-      min-width: 50px;
-      height: 25px;
-      padding: 0;
-      line-height: 25px;
-      margin-right: 12px;
-    }
-    .next{
-      min-width: 50px;
-      height: 25px;
-      padding: 0;
-      line-height: 25px;
-      margin-left: 12px;
     }
   }
 }

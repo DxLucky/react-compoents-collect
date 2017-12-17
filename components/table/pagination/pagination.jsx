@@ -1,6 +1,6 @@
 import React from "react";
-import _ from "underscore";
 import classNames from "classnames";
+import Select from "../../../components/select/select.jsx";
 import "./pagination.scss"
 import PropTypes from 'prop-types';
 class Pagination extends React.Component{
@@ -22,11 +22,11 @@ class Pagination extends React.Component{
         stretchLength:this.props.stretchLength || 3
     };
     this.renderPagination=this.renderPagination.bind(this);
-    this.pageSizeChange=this.pageSizeChange.bind(this);
     this.onSelect=this.onSelect.bind(this);
     this.reset=this.reset.bind(this);
     this.paging=this.paging.bind(this);
     this.goPage=this.goPage.bind(this);
+    this.onSelectChange=this.onSelectChange.bind(this);
   }
   componentWillReceiveProps(newProps){
       let {pageNo,total,pageSize,notSearch } = this.state;
@@ -69,23 +69,11 @@ class Pagination extends React.Component{
             start = 1;
             end = pageCount <= (stretchLength * 2) ? pageCount : stretchLength * 2;
         }
-        array = _.range(start,end+1);
+        for(let i=start;i<=end;i++){
+            array.push(i)
+        }
         return array;
     }
-  pageSizeChange(e){
-      let {total,notSearch} = this.props;
-      let pageSize = parseInt(e.target.value);
-      let pageCount = total % pageSize == 0 ? total / pageSize : parseInt(total / pageSize) + 1;
-      this.setState({
-          pageSize: e.target.value,
-          pageCount:pageCount,
-          notSearch: true
-      });
-      let pagination = this.state;
-      pagination.pageNo = 1;
-      pagination.pageSize = pageSize;
-      this.props.onPageChange(pagination);
-  }
   onSelect(pageNo){
         this.setState({
             pageNo,
@@ -135,10 +123,23 @@ class Pagination extends React.Component{
             turnPage:''
         })
     }
+    onSelectChange(obj){
+        let {total,notSearch} = this.props;
+        let pageSize = parseInt(obj.value);
+        let pageCount = total % pageSize == 0 ? total / pageSize : parseInt(total / pageSize) + 1;
+        this.setState({
+            pageSize: obj.value,
+            pageCount:pageCount,
+            notSearch: true
+        });
+        let pagination = this.state;
+        pagination.pageNo = 1;
+        pagination.pageSize = pageSize;
+        this.props.onPageChange(pagination);
+    }
   render(){
         let { pageNo,total,pageCount,pageSize,turnPage} = this.state;
-        let isShowGoPage = this.props.showGoPage;
-        let isShowEachItem=this.props.showEachItem===false?false:true;
+        let {notShowGoPage,showEachItem} = this.props;
         let itemsArray = this.renderPagination(pageNo);
         let len = itemsArray.length;
         let index =  itemsArray.findIndex((n)=>{
@@ -148,48 +149,61 @@ class Pagination extends React.Component{
         idx = idx > len ? len : idx;
         let arr = itemsArray.slice(0, idx);
         return (
-            <div className="pagination-mod clearfix">
-                <div className="operation pull-left">
-                  <span style={{marginRight:isShowEachItem?'':'10px'}}>合计<label className={classNames({modalPagina:!isShowEachItem})}>{total}</label>条</span>
-                  <span>
-                      {
-                          isShowEachItem &&
-                              <span>
-                                   <b>&nbsp;</b>
-                                  每页
-                          <select defaultValue={pageSize}
-                                  className="min"
-                                  onChange={this.pageSizeChange}>
-                          <option value="5">5</option>
-                          <option value="10">10</option>
-                          <option value="20">20</option>
-                          <option value="30">30</option>
-                          </select>
-                          条,
-                              </span>
-                      }
-                      共<label className={classNames({modalPagina:!isShowEachItem})}>{pageCount}</label>页
-                  </span>
-                    {isShowGoPage &&
-                    <div  className="operation  oper-gopage pull-left">
-                      <span>跳转到第</span>
-                      <input type="text" value={turnPage} style={{width:isShowEachItem?'':'35px'}}
-                              onChange={(e)=>{this.setState({turnPage:e.target.value})}}/>
-                      <span>页</span>
-                      <button key={_.uniqueId('_go_page_item')} className='button min paging confir' onClick={this.goPage}>确定</button>
-                    </div>}
+            <div className="pagination-area">
+                <div className="leftItem">
+                    <p>合计<span className="numberText">{total}</span>条</p>
+                    <div className="selectPage">
+                        每页
+                        <Select className='JokerSelect' width="50px" height="25px"
+                            optionGroup={
+                                [
+                                    {id:0,value:5},
+                                    {id:1,value:10},
+                                    {id:2,value:15},
+                                    {id:3,value:20},
+                                ]
+                            }
+                            defaultSelect={pageSize}
+                            onSelectChange={this.onSelectChange}
+                        />
+                        条，共<span className="numberText">{pageCount}</span>页
+                    </div>
+                    {
+                        !notShowGoPage?
+                            <p className="goPage">
+                                跳转到
+                                <input value={turnPage}
+                                       onChange={
+                                           (e)=>{
+                                               let goPageNum=e.target.value.replace(/[^\d]*/g,'');
+                                               if(goPageNum.charAt(0)==0){
+                                                   goPageNum=goPageNum.replace(0,"")
+                                               }
+                                               this.setState({turnPage:goPageNum})
+                                           }
+                                       }
+                                />
+                                <button onClick={this.goPage}>确定</button>
+                            </p>:null
+                    }
                 </div>
-                <div className="page-wrapper pull-right clearfix">
-                    <button className={classNames('button small prev paging',{disabled:pageNo <= 1})} disabled={pageNo <= 1 ? 'disabled' : ''} onClick={()=>{this.paging('prev')}}>上一页</button>
-                      {_.map(arr, (item) => {
-                          return (
-                              <button key={_.uniqueId('_page_item')} className={classNames('button min paging', {active: item == pageNo})}
-                                      onClick={() => {this.onSelect(item)}}>{item}</button>
-                          );
-                      })}
-                    <button className={classNames('button small next paging',{disabled:pageNo >= pageCount})}  disabled={pageNo >= pageCount ? 'disabled' : ''} onClick={()=>{this.paging('next')}}>下一页</button>
+                <div className="rightItem">
+                    <button className={classNames("lastPage",{notShow:pageNo <= 1})} onClick={()=>{this.paging("prev")}}>上一页</button>
+                    {
+                        arr.map((item,i)=>{
+                            return (
+                                <button
+                                    key={`pageItem${i}`}
+                                    className={classNames("numSign",{active: item == pageNo})}
+                                    onClick={() => {this.onSelect(item)}}
+                                >{item}</button>
+                            )
+                        })
+                    }
+                    <button className={classNames("nextPage",{notShow:pageNo >= pageCount})} onClick={()=>{this.paging("next")}}>下一页</button>
                 </div>
-            </div>);
+            </div>
+        );
     }
 }
 

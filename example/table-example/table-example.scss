@@ -1,23 +1,5 @@
-@import "../../asset/style/dominant";
-
-.operateTools{
-  li{
-    display: inline-block;
-    span{
-      color: $dominant-hue;
-      display: inline-block;
-      border-bottom: 1px solid transparent;
-      transition: all .1s linear;
-      &:hover{
-        cursor: pointer;
-        border-bottom: 1px solid $dominant-hue;
-        transition: all .1s linear;
-      }
-    }
-  }
-  li.devide-line{
-    .iconfont{
-      color: $header-bootom-line-color;
-    }
+.table-example{
+  div.tableBox{
+    margin-bottom: 30px;
   }
 }

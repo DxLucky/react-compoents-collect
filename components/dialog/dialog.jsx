@@ -8,19 +8,21 @@ class Dialog extends React.Component{
         };
     }
     render() {
+        let {width,title,onConfirm,onClose} = this.props;
         return (
             <div className="modal-box">
                 <div className="modal-shadow"></div>
-                <div className="modal-dialog">
+                <div className="modal-dialog" style={{width:`${width}px`}}>
                     <header>
-                        <p>这是标题</p>
-                        <p className="cancleSign"></p>
+                        <p>{title || null}</p>
+                        <p className="cancleSign" onClick={onClose}></p>
                     </header>
                     <section>
-                        这是中间区域,确定取消吗
+                        {this.props.children}
                     </section>
                     <footer>
-                        <button className="btn-confirm"></button>
+                        <button className="btn-confirm" onClick={onConfirm}>确定</button>
+                        <button className="btn-cancel" onClick={onClose}>取消</button>
                     </footer>
                 </div>
             </div>

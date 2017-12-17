@@ -41,16 +41,16 @@ class Select extends React.Component{
     }
     render(){
         let {isShowOption,selectValue}=this.state;
-        let {optionGroup,width}=this.props;
+        let {optionGroup,width,height,textIndent}=this.props;
         return(
             <div style={{width:width?width:""}} className={classNames('selectBox',this.props.className)}>
-                <label onClick={this.changeOptionShow} className={classNames({openOption:isShowOption})} ref="labelSelect">{this.props.defaultSelect}</label>
+                <label style={{height:height?height:"",lineHeight:height?height:"",textIndent:textIndent?textIndent:""}} onClick={this.changeOptionShow} className={classNames({openOption:isShowOption})} ref="labelSelect">{this.props.defaultSelect}</label>
                 {isShowOption?
-                    <ul style={{width:width?width:""}}>
+                    <ul style={{width:width?width:"",top:height?`${parseInt(height)+2}px`:""}}>
                         {
                             optionGroup.map((item)=>{
                                 return(
-                                    <li key={`${item.value}${item.id}`} onClick={this.onSelect} className={classNames({active:item.value==(selectValue==''?this.props.defaultSelect:selectValue)})}>{item.value}</li>
+                                    <li style={{textIndent:textIndent?textIndent:""}} key={`${item.value}${item.id}`} onClick={this.onSelect} className={classNames({active:item.value==(selectValue==''?this.props.defaultSelect:selectValue)})}>{item.value}</li>
                                 )
                             })
                         }

@@ -45,7 +45,6 @@ module.exports = {
             .then(checkStatus)
             .then(parseJSON)
             .then((data)=>{
-            console.log(data,'1113')
                 if(!data.success){
                     if(payload.error){
                         payload.error(data);

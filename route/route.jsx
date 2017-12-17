@@ -5,7 +5,8 @@ import Home from "../app/home/home.jsx";//主页
 import SelectExample from "../example/select-example/selcect-example.jsx";//下拉框
 import AlertExample from "../example/alert-example/alert-example.jsx";//alert框
 import CheckboxExample from "../example/checkbox-example/checkbox-example.jsx";//多选框
-import TableExample from "../example/table-example/table-example.jsx";//表格
+import TableExample from "../example/table-example-w/table-example.jsx";//表格
+import TableExampleNew from "../example/table-example/table-example.jsx"
 import DialogExample from "../example/dialog-example/dialog-example.jsx";//模态框
 // const CheckboxExample= (location , cb) => { //工时日历
 //     require.ensure([],(require) =>{
@@ -24,6 +25,7 @@ class Routers extends React.Component{
                     <Route exact path="/alert" component={AlertExample}/>
                     <Route exact path="/dialog" component={DialogExample}/>
                     <Route exact path="/table" component={TableExample}/>
+                    <Route exact path="/tablenew" component={TableExampleNew}/>
                 </Layout>
             </HashRouter>
         )

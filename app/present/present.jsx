@@ -7,12 +7,11 @@ class Present extends React.Component{
         return(
             <div className="present">
                 <h4>{title || null}</h4>
-                <span>{introduce || null}</span>
+                <span>{introduce || "没啥特别的，哈哈"}</span>
                 <h4>例子</h4>
             </div>
         )
     }
 }
-
 export default Present;
 

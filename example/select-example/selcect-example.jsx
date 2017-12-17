@@ -19,9 +19,9 @@ class SelectExample extends React.Component{
     render(){
         let {shareTypeValue,loadMore}=this.state;
         return(
-            <div>
+            <div className="select-example">
                 <Present title="下拉选择框" introduce="当下拉选项超过一定数量时，出现滚动条"/>
-                <Select className='JokerSelect'  ref="shareType"
+                <Select className='JokerSelect'
                         optionGroup={
                             [
                                 {name:'全部',value:'全部'},{name:'不找上级',value:'不找上级'},{name:'找上级',value:'找上级'}
@@ -31,7 +31,7 @@ class SelectExample extends React.Component{
                         sendField="shareTypeValue"
                         onSelectChange={this.onSelectChange}
                 />
-                <Select className='JokerSelect'  ref="shareType"
+                <Select className='JokerSelect'
                         optionGroup={
                             [
                                 {name:'1',value:'下拉1'},

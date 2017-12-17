@@ -18,7 +18,7 @@ class CheckboxExample extends React.Component{
         let {cureentChecked}=this.state;
         return(
             <div className="checkBox-example">
-              <Present title="复选框" introduce="没啥特别的，哈哈"/>
+              <Present title="复选框"/>
               <Checkbox labelText="记住密码" defaultChecked onCheckedChange={this.onCheckedChange}/>
                 <p>
                     <span>

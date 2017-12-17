@@ -29,6 +29,9 @@ class Aside extends React.Component{
                         <li>
                             <NavLink to="/table" activeStyle={{color: '#f73352'}}>表格</NavLink>
                         </li>
+                        <li>
+                            <NavLink to="/tablenew" activeStyle={{color: '#f73352'}}>新表格</NavLink>
+                        </li>
                     </ul>
                 </div>
                 <i className="iconfont icon-tuichu1" onClick={this.props.exitLogin}/>

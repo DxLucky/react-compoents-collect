@@ -26,8 +26,8 @@ class AlertExample extends React.Component{
         return(
             <div>
                 <Present title="alert提示框" introduce="兼容IE8"/>
-                <button onClick={this.showAlert}>点我弹出</button>
-                <button onClick={this.showAlertVar}>点我弹出</button>
+                <button className="btnCommon" onClick={this.showAlert}>点我弹出</button>
+                <button className="btnCommon" onClick={this.showAlertVar}>点我弹出</button>
             </div>
         )
     }

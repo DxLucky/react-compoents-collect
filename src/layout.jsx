@@ -6,7 +6,7 @@ class Layout extends React.Component{
     constructor(props){
         super(props);
         this.state={
-            isLogin:false
+            isLogin:true
         };
         this.loginSuccess=this.loginSuccess.bind(this);
         this.exitLogin=this.exitLogin.bind(this);
@@ -23,7 +23,7 @@ class Layout extends React.Component{
             return <Login goLogin={this.loginSuccess}/>
         }else {
             return(
-                <div id="mainBox">
+                <div className="mainBox">
                     <div className="bodyBox">
                         <Aside exitLogin={this.exitLogin}/>
                         <div>
