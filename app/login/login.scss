@@ -10,7 +10,7 @@ $login-input-height:35px;
 $login-button-width:230px;
 $login-button-height:30px;
 #loginBox{
-  background-image: url("../../asset/images/login-newBg.jpg");
+  background-image: url("../../asset/images/login-bg-final.jpeg");
   background-size: 100% 100%;
   background-repeat: no-repeat;
   position: absolute;
@@ -26,7 +26,7 @@ $login-button-height:30px;
     position: absolute;
     left: 0;
     top: 0;
-    background-color: rgba(0,0,0,0.2);
+    background-color: rgba(0,0,0,0.1);
   }
   .login-item{
     width: 360px;

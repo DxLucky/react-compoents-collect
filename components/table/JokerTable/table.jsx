@@ -8,13 +8,13 @@ class Table extends React.Component{
     constructor(props){
         super(props);
         this.state={
-            sortOrder:0,
-            isCheckedAll:false
+            sortOrder:0
         };
         this.onPageChange=this.onPageChange.bind(this);
-        this.onCheckedChange=this.onCheckedChange.bind(this);
+        this.checkedSingleChange=this.checkedSingleChange.bind(this);
         this.checkIsCheckedAll=this.checkIsCheckedAll.bind(this);
         this.checkedAllChange=this.checkedAllChange.bind(this);
+        this.selectArr=[];
     }
     componentWillMount(){
         let hasCheckBox=this.props.column.some((item)=>{
@@ -27,25 +27,40 @@ class Table extends React.Component{
         this.state.sortOrder=(page.pageNo-1)*page.pageSize;
         pagination.onPageChange(page)
     }
-    onCheckedChange(checked,itemDetail){
-        delete itemDetail.tdValue;
+    checkedSingleChange(checked,itemDetail){
         itemDetail.isChecked=checked;
-        console.log(this.props.data,'dada')
+        checked ?
+            this.selectArr.push(itemDetail):
+            (
+                this.selectArr.some((item,i)=>{
+                    if(itemDetail.id==item.id){
+                        return this.selectArr.splice(i,1);
+                    }
+                })
+            );
         this.checkIsCheckedAll()
     }
-    checkedAllChange(checked){
-
+    checkedAllChange(){
+        let {checkedAll}=this.state,
+            {data}=this.props;
+        if(!checkedAll){
+            this.selectArr=[...data];
+        }else {
+            this.selectArr=[]
+        }
+        data.length>0 && data.map((item)=>{
+            item.isChecked=!checkedAll
+        });
+        this.checkIsCheckedAll()
     }
     checkIsCheckedAll(){
         let {data}=this.props;
-        let notCheckedAll=data.some((item)=>{
-            return item.isChecked==false
-        })
-        // this.setState({isCheckedAll:!notCheckedAll})
-        console.log(notCheckedAll,"notCheckedAll")
+        let equalAll=this.selectArr.length===data.length;
+        console.log(this.selectArr,'this.selectArr')//已经选中的数据
+        this.setState({checkedAll:equalAll})
     }
     render(){
-        let {sortOrder,isCheckedAll}=this.state;
+        let {sortOrder,checkedAll}=this.state;
         let {
            data,//表格原始数据
            column,//展现的列
@@ -57,13 +72,12 @@ class Table extends React.Component{
         let totalColNum=column.length;
         data.length>0 && data.map((item,i)=>{
             item.tdValue=[];
-            if(this.isHasChecked){item.isChecked=false}
             column.forEach((colItem)=>{
                 let formatcolVal;
                 switch (colItem.colName){
                     case "orderNum":formatcolVal=sortOrder+i+1;break;
                     case "checkBox":formatcolVal=
-                        <Checkbox onCheckedChange={this.onCheckedChange} itemDetail={item}/>;
+                        <Checkbox sendChecked={item.isChecked} onCheckedChange={this.checkedSingleChange} itemDetail={item}/>;
                         break;
                     default:formatcolVal=item[colItem.colName]
                 }
@@ -75,7 +89,6 @@ class Table extends React.Component{
                 );
             })
         });
-        console.log(data,'data')
         return(
             <div className={classnames("tableBox",{hasBoder:hasBoder})}>
                 <table cellPadding="0" cellSpacing="0" width={tableWidth?tableWidth:"100%"}>
@@ -87,7 +100,7 @@ class Table extends React.Component{
                                         style={{width:item.width}}
                                     >
                                         {item.title=="checkBox"?
-                                            <Checkbox defaultChecked={isCheckedAll} onCheckedChange={this.checkedAllChange}/>:
+                                            <Checkbox sendChecked={checkedAll} onCheckedChange={this.checkedAllChange}/>:
                                             item.title
                                         }
                                     </th>

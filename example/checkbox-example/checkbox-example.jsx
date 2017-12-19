@@ -19,7 +19,7 @@ class CheckboxExample extends React.Component{
         return(
             <div className="checkBox-example">
               <Present title="复选框"/>
-              <Checkbox labelText="记住密码" defaultChecked onCheckedChange={this.onCheckedChange}/>
+              <Checkbox labelText="记住密码" sendChecked={cureentChecked} onCheckedChange={this.onCheckedChange}/>
                 <p>
                     <span>
                         当前选择：{cureentChecked ? "是(true)":"否(false)"}

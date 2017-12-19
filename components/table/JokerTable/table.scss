@@ -13,8 +13,8 @@ div.tableBox{
     border-bottom: none;
     background-color: $table-bgColor;
     div.checkBox{
-      vertical-align: middle;
       >span:first-child{
+        display: inline-block;
         border: 1px solid $table-fontColor;
         transition: all .1s linear;
       }

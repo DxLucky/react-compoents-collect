@@ -6,16 +6,21 @@ class Checkbox extends React.Component{
     constructor(props){
         super(props);
         this.state={
-            isChecked:this.props.defaultChecked
+            isChecked:this.props.sendChecked
         };
-        this.checkedChange=this.checkedChange.bind(this)
+        this.checkedChange=this.checkedChange.bind(this);
     }
     checkedChange(){
         let {onCheckedChange,itemDetail}=this.props;
-        this.setState({
-            isChecked:!this.state.isChecked
-        });
         itemDetail? onCheckedChange(!this.state.isChecked,itemDetail):onCheckedChange(!this.state.isChecked)
+    }
+    componentWillReceiveProps(nextProps){
+        if(nextProps.sendChecked!=="undefined"){
+            this.setState({isChecked:nextProps.sendChecked})
+        }
+    }
+    shouldComponentUpdate(nextProps,nextState) {
+        return nextState.isChecked!==this.state.isChecked
     }
     render(){
         let {isChecked}=this.state;
