@@ -1,5 +1,29 @@
+$cutoff-line-color:#d8d8d8;//操作分割线颜色
+$dominant-hue:#f73352;//主色调
 .table-example{
   div.tableBox{
     margin-bottom: 30px;
+  }
+  ul.operateArea{
+      //border: 1px solid red;
+      display: inline-block;
+    li{
+      display: inline-block;
+      &.operateOption{
+        border-bottom: 1px solid transparent;
+        transition: all .1s linear;
+        cursor: pointer;
+        color:$dominant-hue;
+        &:hover{
+          border-bottom: 1px solid $dominant-hue;
+          transition: all .1s linear;
+        }
+      }
+      &.devide-line{
+        .iconfont{
+          color: $cutoff-line-color;
+        }
+      }
+    }
   }
 }

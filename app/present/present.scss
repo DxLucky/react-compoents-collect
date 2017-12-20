@@ -9,11 +9,13 @@
       margin-top: 10px;
     }
   }
-  span{
-    display: inline-block;
-    text-indent:2em;
-    margin-right: 100px;
+  ul{
     border-top: 1px solid $cutApart-line-color;
-    color: $cutApart-line-color;
+    display: inline-block;
+    margin-right: 100px;
+    li{
+      text-indent:2em;
+      color: $cutApart-line-color;
+    }
   }
 }

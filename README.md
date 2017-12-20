@@ -1,4 +1,5 @@
-### 平常项目组件收集(react+es6+webpack)
+### 平常项目组件Collect(react+es6+webpack)
 
-![](https://i.imgur.com/e4cqWPu.jpg)
+![](https://i.imgur.com/pW5uZHU.jpg)
 
+![](https://i.imgur.com/IMRuhmo.png)

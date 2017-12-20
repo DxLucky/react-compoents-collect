@@ -8,6 +8,7 @@ div.checkBox {
   overflow: hidden;
   height: $checkBox-out-size;
   display: inline-block;
+  vertical-align: middle;
   >span:first-child{
     display: inline-block;
     width: $checkBox-size;

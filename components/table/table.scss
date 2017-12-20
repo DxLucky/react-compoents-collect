@@ -6,12 +6,16 @@ $table-fontColor:#626161;//表格字体颜色
 $table-fontSize:14px;//表格字体大小
 $thead-bgColor:#f8f8f8;//表头背景颜色
 $tr-hover-bgColor:#fee5e9;//每行移入背景颜色
+$sort-shortSize:4px;//排序三角行短边的大小
+$sort-longSize:6px;//排序三角行长边的大小
 div.tableBox{
+  overflow-x: auto;
   table{
     font-size: $table-fontSize;
     border:1px solid $table-border-color;
     border-bottom: none;
     background-color: $table-bgColor;
+    width: 100%;
     div.checkBox{
       >span:first-child{
         display: inline-block;
@@ -29,7 +33,38 @@ div.tableBox{
     }
     th{
       border-bottom: 1px solid $table-border-color;
-      color: $table-fontColor;
+      ul.attachSign{
+        display: inline-block;
+        vertical-align: middle;
+        margin-left: 5px;
+        li{
+          list-style: none;
+          width: 0;
+          height: 0;
+          cursor: pointer;
+          &.asc{
+            border-left: $sort-shortSize solid transparent;
+            border-right: $sort-shortSize solid transparent;
+            border-bottom: $sort-longSize solid $table-border-color;
+            margin-bottom: 3px;
+            transition: all .1s linear;
+            &:hover{
+              border-bottom: $sort-longSize solid $dominant-hue;
+              transition: all .1s linear;
+            }
+          }
+          &.des{
+            border-left: $sort-shortSize solid transparent;
+            border-right: $sort-shortSize solid transparent;
+            border-top: $sort-longSize solid $table-border-color;
+            transition: all .1s linear;
+            &:hover{
+              border-top: $sort-longSize solid $dominant-hue;
+              transition: all .1s linear;
+            }
+          }
+        }
+      }
     }
   }
   .tbodyControl{

@@ -138,18 +138,19 @@ class Pagination extends React.Component{
         this.props.onPageChange(pagination);
     }
   render(){
-        let { pageNo,total,pageCount,pageSize,turnPage} = this.state;
-        let {notShowGoPage,showEachItem} = this.props;
-        let itemsArray = this.renderPagination(pageNo);
-        let len = itemsArray.length;
-        let index =  itemsArray.findIndex((n)=>{
-            return n == pageNo;
-        });
-        let idx =  index + 3;
+        let { pageNo,total,pageCount,pageSize,turnPage} = this.state,
+            {showGoPage,paginationWidth} = this.props,
+            itemsArray = this.renderPagination(pageNo),
+            len = itemsArray.length,
+            index =  itemsArray.findIndex((n)=>{
+                return n == pageNo;
+            }),
+            idx =  index + 3;
         idx = idx > len ? len : idx;
         let arr = itemsArray.slice(0, idx);
+        let paginationWidthCalculate=paginationWidth-22;
         return (
-            <div className="pagination-area">
+            <div className="pagination-area" style={{width:`${paginationWidthCalculate}px` || "100%"}}>
                 <div className="leftItem">
                     <p>合计<span className="numberText">{total}</span>条</p>
                     <div className="selectPage">
@@ -169,7 +170,7 @@ class Pagination extends React.Component{
                         条，共<span className="numberText">{pageCount}</span>页
                     </div>
                     {
-                        !notShowGoPage?
+                        showGoPage || showGoPage===undefined?
                             <p className="goPage">
                                 跳转到
                                 <input value={turnPage}
