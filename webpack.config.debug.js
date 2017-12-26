@@ -34,7 +34,12 @@ module.exports={
                 use: ExtractTextPlugin.extract({
                     fallback: "style-loader",
                     use: [
-                        "css-loader?importLoaders=1",
+                        {
+                            loader:"css-loader" ,
+                            options:{
+                                importLoaders: 1
+                            }
+                        },
                         "resolve-url-loader",
                         "sass-loader?sourceMap",
                         {
@@ -56,7 +61,7 @@ module.exports={
                 use:[{
                     loader : 'url-loader',//加载url-loader 同时安装 file-loader;
                     options:{
-                        limit : 5000, //小于5000000b的图片文件转base64到css里,当然css文件体积更大;
+                        limit : 5000, //小于5000b的图片文件转base64到css里,当然css文件体积更大;
                         name : 'img/[name].[hash:8].[ext]',//设置最终images路径;
                         query: 'random=' + new Date().getTime()
                     }

@@ -6,7 +6,7 @@ class Checkbox extends React.Component{
     constructor(props){
         super(props);
         this.state={
-            isChecked:this.props.sendChecked || this.props.defaultChecked
+            isChecked:props.sendChecked || props.defaultChecked
         };
         this.checkedChange=this.checkedChange.bind(this);
     }
@@ -28,7 +28,7 @@ class Checkbox extends React.Component{
         let {labelText}=this.props;
         return(
             <div onClick={this.checkedChange} className={classNames('checkBox',this.props.className)}>
-                <span className={classNames({Checked:isChecked})}></span>
+                <span className={classNames({Checked:isChecked})}/>
                 <span>{labelText}</span>
             </div>
         )

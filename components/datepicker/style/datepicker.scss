@@ -1,0 +1,248 @@
+@import "../style/common.scss";
+@mixin monthPickerLayout{
+  li.monthpickerArea{
+    .monthpicker-plate{
+      @include pickerPlate;
+      box-shadow: none;
+      border-radius: 0 0 5px 5px;
+      left: -2px;
+      ul.plate-header{
+        height: $picker-header-footer-height;
+        border-bottom: 1px solid $picker-input-borderColor;
+        margin: 0 $picker-space;
+        @include flexLayout;
+        padding: 0 10px;
+        li{
+          list-style: none;
+          span{
+            cursor: pointer;
+          }
+          &.leftArea{
+            span{
+              width: 28px;
+            }
+            span.turnBefore:after{
+              content:"\AB";
+              color: $picker-arrow-fontColor;
+              transition: all .1s linear;
+            }
+            span.turnBefore:hover:after{
+              color: $dominant-hue;
+              transition: all .1s linear;
+            }
+          }
+          &.rightArea{
+            span{
+              width: 28px;
+            }
+            span.turnAfter:after{
+              content:"\BB";
+              color: $picker-arrow-fontColor;
+              transition: all .1s linear;
+            }
+            span.turnAfter:hover:after{
+              color: $dominant-hue;
+              transition: all .1s linear;
+            }
+          }
+          &.centerArea{
+            span{
+              font-size: $pickerPlate-fontSize;
+              color: $picker-titleFontColor;
+              transition: all .1s linear;
+              &:hover{
+                cursor: pointer;
+                color: $dominant-hue;
+                transition: all .1s linear;
+              }
+            }
+          }
+          &.yearRange{
+            span{
+              font-size: $pickerPlate-fontSize;
+              color: $picker-titleFontColor;
+              transition: all .1s linear;
+              &:hover{
+                cursor: default;
+                color: $picker-titleFontColor;
+                transition: all .1s linear;
+              }
+            }
+          }
+        }
+      }
+      div.plate-body{
+        padding: 0 30px;
+        ul{
+          @include flexLayout;
+          height: 60px;
+          li{
+            width: $month-width;
+            height: $month-height;
+            line-height: $month-height;
+            border-radius: $picker-radius;
+            font-size: $pickerPlate-fontSize;
+            color: $picker-fontColor;
+            text-align: center;
+            cursor: pointer;
+            transition: all .1s linear;
+            &:hover{
+              background-color: $day-hover-bgColor;
+              transition: all .1s linear;
+            }
+            &.active{
+              background-color: $dominant-hue;
+              color: #fff;
+              &:hover{
+                background-color: $dominant-hue;
+                color: #fff;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.datepicker{
+  position: relative;
+  display: inline-block;
+  input{
+    @include inputStyle;
+  }
+  div.datepicker-plate{
+    @include pickerPlate;
+    input{
+      width: 100%;
+      border: none;
+      height: 35px;
+      border-radius: 0;
+    }
+    >ul.plate-header{
+      height: $picker-header-footer-height;
+      border-top: 1px solid $picker-input-borderColor;
+      border-bottom: 1px solid $picker-input-borderColor;
+      margin: 0 $picker-space;
+      @include flexLayout;
+      padding: 0 10px;
+      position: relative;
+      >li{
+        list-style: none;
+        span{
+          cursor: pointer;
+        }
+        &.leftArea{
+          @include flexLayout;
+          width: 28px;
+          span{
+            &:first-child:after{
+              content:"\AB";
+              color: $picker-arrow-fontColor;
+              transition: all .1s linear;
+            }
+            &:last-child:after{
+              content:"\2039";
+              color: $picker-arrow-fontColor;
+              transition: all .1s linear;
+            }
+            @include pseudoClass;
+          }
+        }
+        &.rightArea{
+          @include flexLayout;
+          width: 28px;
+          span{
+            &:first-child:after{
+              content:"\203A";
+              color: $picker-arrow-fontColor;
+              transition: all .1s linear;
+            }
+            &:last-child:after{
+              content:"\BB";
+              color: $picker-arrow-fontColor;
+              transition: all .1s linear;
+            }
+            @include pseudoClass;
+          }
+        }
+        &.centerArea{
+          span{
+            font-size: $pickerPlate-fontSize;
+            color: $picker-titleFontColor;
+            cursor: pointer;
+            transition: all .1s linear;
+            &:hover{
+              color: $dominant-hue;
+              transition: all .1s linear;
+            }
+            &:first-child{
+              display: inline-block;
+              margin-right: 8px;
+              width: 30px;
+              text-align: right;
+            }
+          }
+        }
+      }
+      @include monthPickerLayout;
+    }
+    div.plate-body{
+      padding: 0 20px;
+      ul{
+        @include flexLayout;
+        height: $day-height+6px;
+        li{
+          height: $day-height;
+          width: $day-height;
+          line-height: $day-height;
+          text-align: center;
+          font-size: $pickerPlate-fontSize;
+          color: $picker-fontColor;
+        }
+      }
+      ul.plate-week{
+        margin-top: 5px;
+        li:last-child,li:nth-last-of-type(2){
+          color: $picker-week-fontColor;
+        }
+      }
+      ul.plate-day{
+        li.eachDay{
+          cursor: pointer;
+          border-radius: 2px;
+          transition: all .1s linear;
+          &:hover{
+            background-color: $day-hover-bgColor;
+            transition: all .1s linear;
+          }
+        }
+        li.weekend{
+          color: $picker-week-fontColor;
+        }
+      }
+      ul:last-child{
+        margin-bottom: 5px;
+      }
+    }
+    ul.plate-footer{
+      border-top: 1px solid $picker-input-borderColor;
+      margin: 0 $picker-space;
+      height: $picker-header-footer-height;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      li{
+        span{
+          font-size: $pickerPlate-fontSize;
+          color: $picker-titleFontColor;
+          transition: all .1s linear;
+          cursor: pointer;
+          &:hover{
+            color: $dominant-hue;
+            transition: all .1s linear;
+          }
+        }
+      }
+    }
+  }
+}

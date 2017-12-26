@@ -11,8 +11,10 @@
   "license": "ISC",
   "dependencies": {
     "classnames": "^2.2.5",
+    "moment": "^2.20.1",
     "path": "^0.12.7",
     "prop-types": "^15.5.10",
+    "rc-calendar": "^9.3.2",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-particles-js": "^2.1.0",

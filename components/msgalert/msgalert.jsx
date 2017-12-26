@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./alert.scss";
+import "./msgalert.scss";
 class AlertBox extends React.Component{
     constructor(props){
         super(props);
@@ -57,7 +57,7 @@ class AlertBox extends React.Component{
         return(
             <div className="modalOuter" ref="msgModal" style={{opacity:opacity}}>
                 <div>
-                    <span className="closeTips" onClick={this.closeAlert}></span>
+                    <span className="closeTips" onClick={this.closeAlert}/>
                     <p>
                         <img src={require("./tips.png")}/>
                         {this.props.msg}
@@ -67,7 +67,7 @@ class AlertBox extends React.Component{
         )
     }
 }
-const Alert=class{
+const MsgAlert=class{
     static showMsg(item){
         let parentDOM=document.createElement("div");
         let parentID=parseInt(Math.random()*10).toString();
@@ -79,4 +79,4 @@ const Alert=class{
         );
     }
 };
-export default Alert
+export default MsgAlert

@@ -33,7 +33,12 @@ module.exports={
                 use: ExtractTextPlugin.extract({
                     fallback: "style-loader",
                     use: [
-                        "css-loader?importLoaders=1",
+                        {
+                            loader:"css-loader" ,
+                            options:{
+                                importLoaders: 1
+                            }
+                        },
                         "resolve-url-loader",
                         "sass-loader?sourceMap",
                         {

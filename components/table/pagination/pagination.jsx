@@ -14,12 +14,12 @@ class Pagination extends React.Component{
   constructor(props){
     super(props);
     this.state={
-        pageNo: this.props.pageNo || 1,
-        pageSize:this.props.pageSize || 10,
-        total:this.props.total,
+        pageNo: props.pageNo || 1,
+        pageSize:props.pageSize || 10,
+        total:props.total,
         notSearch: false,
         turnPage:'',
-        stretchLength:this.props.stretchLength || 3
+        stretchLength:props.stretchLength || 3
     };
     this.renderPagination=this.renderPagination.bind(this);
     this.onSelect=this.onSelect.bind(this);
@@ -126,7 +126,7 @@ class Pagination extends React.Component{
     onSelectChange(obj){
         let {total,notSearch} = this.props;
         let pageSize = parseInt(obj.value);
-        let pageCount = total % pageSize == 0 ? total / pageSize : parseInt(total / pageSize) + 1;
+        let pageCount = total % pageSize === 0 ? total / pageSize : parseInt(total / pageSize) + 1;
         this.setState({
             pageSize: obj.value,
             pageCount:pageCount,
@@ -143,7 +143,7 @@ class Pagination extends React.Component{
             itemsArray = this.renderPagination(pageNo),
             len = itemsArray.length,
             index =  itemsArray.findIndex((n)=>{
-                return n == pageNo;
+                return n === pageNo;
             }),
             idx =  index + 3;
         idx = idx > len ? len : idx;
@@ -177,7 +177,7 @@ class Pagination extends React.Component{
                                        onChange={
                                            (e)=>{
                                                let goPageNum=e.target.value.replace(/[^\d]*/g,'');
-                                               if(goPageNum.charAt(0)==0){
+                                               if(goPageNum.charAt(0)===0){
                                                    goPageNum=goPageNum.replace(0,"")
                                                }
                                                this.setState({turnPage:goPageNum})
@@ -195,7 +195,7 @@ class Pagination extends React.Component{
                             return (
                                 <button
                                     key={`pageItem${i}`}
-                                    className={classNames("numSign",{active: item == pageNo})}
+                                    className={classNames("numSign",{active: item === pageNo})}
                                     onClick={() => {this.onSelect(item)}}
                                 >{item}</button>
                             )

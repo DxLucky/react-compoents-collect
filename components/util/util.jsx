@@ -1,9 +1,9 @@
 import "whatwg-fetch";
-import Alert from "../../components/alert/alert.jsx";
+import MsgAlert from "../msgalert/msgalert.jsx";
 
 module.exports = {
     msgAlert(msg){//消息提示弹框
-        Alert.showMsg({
+        MsgAlert.showMsg({
             msg:msg,
             timeout:20,
             fade:true
@@ -23,7 +23,7 @@ module.exports = {
                     method: payload.type || 'post',
                     credentials: 'include',
                     headers:payload.headers,
-                    body:(payload.type=="get" ||payload.type=="head")?undefined:JSON.stringify(body)
+                    body:(payload.type==="get" ||payload.type==="head")?undefined:JSON.stringify(body)
                 };
             return options
         }

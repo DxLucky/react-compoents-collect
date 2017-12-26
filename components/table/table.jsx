@@ -25,7 +25,7 @@ class Table extends React.Component{
         super(props);
         this.state={
             sortOrder:0,
-            initData:this.props.data
+            initData:props.data
         };
         this.onPageChange=this.onPageChange.bind(this);
         this.checkedSingleChange=this.checkedSingleChange.bind(this);
@@ -81,7 +81,6 @@ class Table extends React.Component{
         }
     }
     sortOption(sortItem,accordType){
-        console.log(sortItem,accordType,'accordType')
         let {initData}=this.state;
         initData.sort(this.compareSort(sortItem,accordType));
         this.setState({initData})
@@ -149,8 +148,8 @@ class Table extends React.Component{
                                         {
                                             item.sort?
                                                 <ul className="attachSign">
-                                                    <li className="asc" onClick={()=>{this.sortOption(item.colName,"asc")}}></li>
-                                                    <li className="des" onClick={()=>{this.sortOption(item.colName,"des")}}></li>
+                                                    <li className="asc" onClick={()=>{this.sortOption(item.colName,"asc")}}/>
+                                                    <li className="des" onClick={()=>{this.sortOption(item.colName,"des")}}/>
                                                 </ul>:null
                                         }
                                     </th>

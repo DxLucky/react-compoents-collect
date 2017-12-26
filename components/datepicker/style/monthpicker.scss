@@ -1,0 +1,143 @@
+@import "../style/common.scss";
+.monthpicker{
+  position: relative;
+  display: inline-block;
+  >div:first-child{
+    position: relative;
+    @include inputStyle;
+    transition: all .1s linear;
+    &:hover{
+      cursor: default;
+      border: 1px solid $dominant-hue;
+      transition: all .1s linear;
+      input{
+        cursor: default;
+      }
+    }
+    input{
+      border: none;
+      height: $picker-input-height;
+      background-color: transparent;
+      width:($picker-input-width)-10px;
+    }
+    >i{
+      position: absolute;
+      right: 6px;
+      top: 5px;
+      &.icon-rili{
+        color: $picker-input-borderColor;
+        font-size: 18px;
+      }
+      &.icon-shanchu{
+        color: red;
+        font-size: 14px;
+        transition: all .1s linear;
+        z-index: 5;
+        &:hover{
+          cursor: pointer;
+          color: $picker-input-borderColor;
+          transition: all .1s linear;
+        }
+      }
+    }
+  }
+  .monthpicker-plate{
+    @include pickerPlate;
+    z-index: 200;
+    ul.plate-header{
+      height: $picker-header-footer-height;
+      border-bottom: 1px solid $picker-input-borderColor;
+      margin: 0 $picker-space;
+      @include flexLayout;
+      padding: 0 10px;
+      li{
+        list-style: none;
+        span{
+          cursor: pointer;
+        }
+        &.leftArea{
+          span{
+            width: 28px;
+          }
+          span.turnBefore:after{
+            content:"\AB";
+            color: $picker-arrow-fontColor;
+            transition: all .1s linear;
+          }
+          span.turnBefore:hover:after{
+            color: $dominant-hue;
+            transition: all .1s linear;
+          }
+        }
+        &.rightArea{
+          span{
+            width: 28px;
+          }
+          span.turnAfter:after{
+            content:"\BB";
+            color: $picker-arrow-fontColor;
+            transition: all .1s linear;
+          }
+          span.turnAfter:hover:after{
+            color: $dominant-hue;
+            transition: all .1s linear;
+          }
+        }
+        &.centerArea{
+          span{
+            font-size: $pickerPlate-fontSize;
+            color: $picker-titleFontColor;
+            transition: all .1s linear;
+            &:hover{
+              cursor: pointer;
+              color: $dominant-hue;
+              transition: all .1s linear;
+            }
+          }
+        }
+        &.yearRange{
+          span{
+            font-size: $pickerPlate-fontSize;
+            color: $picker-titleFontColor;
+            transition: all .1s linear;
+            &:hover{
+              cursor: default;
+              color: $picker-titleFontColor;
+              transition: all .1s linear;
+            }
+          }
+        }
+      }
+    }
+    div.plate-body{
+      padding: 0 30px;
+      ul{
+        @include flexLayout;
+        height: 60px;
+        li{
+          width: $month-width;
+          height: $month-height;
+          line-height: $month-height;
+          border-radius: $picker-radius;
+          font-size: $pickerPlate-fontSize;
+          color: $picker-fontColor;
+          text-align: center;
+          cursor: pointer;
+          transition: all .1s linear;
+          &:hover{
+            background-color: $day-hover-bgColor;
+            transition: all .1s linear;
+          }
+          &.active{
+            background-color: $dominant-hue;
+            color: #fff;
+            &:hover{
+              background-color: $dominant-hue;
+              color: #fff;
+            }
+          }
+        }
+      }
+    }
+  }
+}

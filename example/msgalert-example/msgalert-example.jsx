@@ -1,6 +1,6 @@
 import React from "react";
 import Present from "../../app/present/present.jsx";
-import Alert from "../../components/alert/alert.jsx";//下拉框
+import MsgAlert from "../../components/msgalert/msgalert.jsx";
 class AlertExample extends React.Component{
     constructor(props){
         super(props);
@@ -9,7 +9,7 @@ class AlertExample extends React.Component{
         this.showAlertVar=this.showAlertVar.bind(this);
     }
     componentAlert(msg){
-        Alert.showMsg({
+        MsgAlert.showMsg({
             msg:msg,
             timeout:20,
             fade:true
@@ -25,7 +25,7 @@ class AlertExample extends React.Component{
     render(){
         return(
             <div>
-                <Present title="alert提示框" introduce="兼容IE8"/>
+                <Present title="消息提示框" introduce="兼容IE8"/>
                 <button className="btnCommon" onClick={this.showAlert}>点我弹出</button>
                 <button className="btnCommon" onClick={this.showAlertVar}>点我弹出</button>
             </div>

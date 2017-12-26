@@ -1,0 +1,70 @@
+$dominant-hue:#f73352;
+$pickerPlate-width:280px;
+$pickerPlate-yearMonth-height:281px;
+$picker-input-width:160px;
+$picker-input-height:28px;
+$picker-input-borderColor:#d9d9d9;
+$picker-radius:5px;
+$picker-bgColor:#fff;
+$picker-signColor:#f0f0f0;
+$picker-fontColor:rgba(0,0,0,0.65);
+$picker-titleFontColor:rgba(0,0,0,0.85);
+$picker-week-fontColor:rgba(0, 0, 0, 0.25);
+$pickerPlate-boxShadow:rgba(0,0,0,0.15);
+$pickerPlate-fontSize:14px;
+$picker-arrow-fontColor:rgba(0,0,0,0.45);
+$picker-header-footer-height:40px;
+$picker-space:2px;
+$day-height:24px;
+$day-hover-bgColor:#fee5e9;
+$month-width:40px;
+$month-height:25px;
+@mixin inputStyle{
+  width: $picker-input-width;
+  height: $picker-input-height;
+  border: 1px solid $picker-input-borderColor;
+  border-radius: $picker-radius;
+  background-color: $picker-bgColor;
+  color: $picker-fontColor;
+  padding-left: 10px;
+}
+@mixin pickerPlate{
+  width: $pickerPlate-width;
+  background-color: $picker-bgColor;
+  box-shadow: 0 2px 8px $pickerPlate-boxShadow;
+  border-radius: $picker-radius;
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+@mixin flexLayout{
+  display: flex;
+  flex-wrap:wrap;/*设置或检索伸缩盒对象的子元素超出父容器时是否换行,nowrap不换行，wrap换行*/
+  justify-content:space-between;/*space-between 头尾各靠两边，中间均分*//*flex-start | flex-end | center | space-between | space-around*/
+  align-items:center;/*纵向显示方式*/
+}
+@mixin pseudoClass{
+  &:first-child:hover:after{
+    color: $dominant-hue;
+    transition: all .1s linear;
+  }
+  &:last-child:hover:after{
+    color: $dominant-hue;
+    transition: all .1s linear;
+  }
+}
+@keyframes spread {
+  from{height: 0}
+  to{height: $pickerPlate-yearMonth-height}
+}
+.spreadAnimation{
+  animation:spread .2s ease-out both;
+}
+@keyframes shrink {
+  from{opacity:1;height: $pickerPlate-yearMonth-height}
+  to{opacity:0;height: 0}
+}
+.shrinkAnimation{
+  animation:shrink .2s ease-out both;
+}

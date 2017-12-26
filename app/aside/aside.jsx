@@ -21,13 +21,19 @@ class Aside extends React.Component{
                             <NavLink to="/checkbox" activeStyle={{color: '#f73352'}}>复选框</NavLink>
                         </li>
                         <li>
-                            <NavLink to="/alert" activeStyle={{color: '#f73352'}}>alert提示框</NavLink>
+                            <NavLink to="/alert" activeStyle={{color: '#f73352'}}>消息提示框</NavLink>
                         </li>
                         <li>
                             <NavLink to="/dialog" activeStyle={{color: '#f73352'}}>模态框</NavLink>
                         </li>
                         <li>
                             <NavLink to="/table" activeStyle={{color: '#f73352'}}>表格</NavLink>
+                        </li>
+                        <li>
+                            <NavLink to="/datepicker" activeStyle={{color: '#f73352'}}>日期选择器</NavLink>
+                        </li>
+                        <li>
+                            <NavLink to="/timepicker" activeStyle={{color: '#f73352'}}>日期选择框</NavLink>
                         </li>
                     </ul>
                 </div>
