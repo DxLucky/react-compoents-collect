@@ -107,8 +107,31 @@
 .datepicker{
   position: relative;
   display: inline-block;
-  input{
+  >div:first-child{
+    position: relative;
     @include inputStyle;
+    transition: all .1s linear;
+    &:hover{
+      cursor: pointer;
+      border: 1px solid $dominant-hue;
+      transition: all .1s linear;
+    }
+    input{
+      border: none;
+      height: $picker-input-height;
+      background-color: transparent;
+      width:($picker-input-width)-10px;
+      cursor: pointer;
+    }
+    >i{
+      position: absolute;
+      right: 6px;
+      top: 5px;
+      &.icon-rili{
+        color: $picker-input-borderColor;
+        font-size: 18px;
+      }
+    }
   }
   div.datepicker-plate{
     @include pickerPlate;
@@ -117,6 +140,7 @@
       border: none;
       height: 35px;
       border-radius: 0;
+      padding-left: 10px;
     }
     >ul.plate-header{
       height: $picker-header-footer-height;
@@ -215,9 +239,17 @@
             background-color: $day-hover-bgColor;
             transition: all .1s linear;
           }
-        }
-        li.weekend{
-          color: $picker-week-fontColor;
+          &.weekend{
+            color: $picker-week-fontColor;
+          }
+          &.active{
+            background-color: $dominant-hue;
+            color: #fff;
+            &:hover{
+              background-color: $dominant-hue;
+              color: #fff;
+            }
+          }
         }
       }
       ul:last-child{

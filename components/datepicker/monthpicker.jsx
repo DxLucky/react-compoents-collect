@@ -21,7 +21,6 @@ class MonthPicker extends React.Component{
         this.showYearPlate=this.showYearPlate.bind(this);
         this.showPickerPlate=this.showPickerPlate.bind(this);
         this.onSelected=this.onSelected.bind(this);
-        this.hiddenCalendarSign=this.hiddenCalendarSign.bind(this);
     }
     turnYear(i=0,type){
         switch (type){
@@ -96,9 +95,6 @@ class MonthPicker extends React.Component{
             return null;
         };
     }
-    hiddenCalendarSign(){
-        console.log(1)
-    }
     render(){
         let {monthArr,
              cureentmonth,
@@ -109,14 +105,10 @@ class MonthPicker extends React.Component{
              yearArr,
              onSelectDate,
              yearRange}=this.state;
-        console.log(onSelectDate,'onSelectDate')
         return(
             <div className="monthpicker">
-                <div onClick={this.showPickerPlate}
-                     onMouseOver={this.hiddenCalendarSign}
-                >
+                <div onClick={this.showPickerPlate}>
                     <input placeholder="请选择月份" readOnly value={onSelectDate}/>
-                    <i className="iconfont icon-shanchu"/>
                     <i className="iconfont icon-rili"/>
                 </div>
                 {

@@ -2,30 +2,30 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="17855ba5-83b7-4df4-af58-364bf2584011" name="默认的" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/components/datepicker/datepicker.jsx" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/components/dialog/dialog.jsx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/components/dialog/dialog.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/components/timepicker/month-timepicker.jsx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/components/timepicker/single-timepicker.jsx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/components/timepicker/start-end-timepicker.jsx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/components/timepicker/week-timepicker.jsx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/main.65cbf010.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/main.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/vendor.min.js" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/aside/aside.jsx" afterPath="$PROJECT_DIR$/app/aside/aside.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/home/home.jsx" afterPath="$PROJECT_DIR$/app/home/home.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/login/login.scss" afterPath="$PROJECT_DIR$/app/login/login.scss" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/asset/style/common.scss" afterPath="$PROJECT_DIR$/asset/style/common.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/checkbox/checkbox.jsx" afterPath="$PROJECT_DIR$/components/checkbox/checkbox.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/table/pagination/pagination.jsx" afterPath="$PROJECT_DIR$/components/table/pagination/pagination.jsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/datepicker/datepicker.jsx" afterPath="$PROJECT_DIR$/components/datepicker/datepicker.jsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/datepicker/monthpicker.jsx" afterPath="$PROJECT_DIR$/components/datepicker/monthpicker.jsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/datepicker/style/datepicker.scss" afterPath="$PROJECT_DIR$/components/datepicker/style/datepicker.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/datepicker/style/monthpicker.scss" afterPath="$PROJECT_DIR$/components/datepicker/style/monthpicker.scss" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/table/table.jsx" afterPath="$PROJECT_DIR$/components/table/table.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/util/util.jsx" afterPath="$PROJECT_DIR$/components/util/util.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/main.65cbf010.js" afterPath="$PROJECT_DIR$/dist/main.65cbf010.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/example/dialog-example/dialog-example.jsx" afterPath="$PROJECT_DIR$/example/dialog-example/dialog-example.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/example/datepicker-example/datepicker-example.jsx" afterPath="$PROJECT_DIR$/example/datepicker-example/datepicker-example.jsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/example/msgalert-example/msgalert-example.jsx" afterPath="$PROJECT_DIR$/example/msgalert-example/msgalert-example.jsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/example/table-example/table-example.jsx" afterPath="$PROJECT_DIR$/example/table-example/table-example.jsx" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/route/route.jsx" afterPath="$PROJECT_DIR$/route/route.jsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server.js" afterPath="$PROJECT_DIR$/server.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webpack.config.debug.js" afterPath="$PROJECT_DIR$/webpack.config.debug.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webpack.config.release.js" afterPath="$PROJECT_DIR$/webpack.config.release.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/components/alert/alert.jsx" afterPath="$PROJECT_DIR$/components/msgalert/msgalert.jsx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/components/alert/alert.scss" afterPath="$PROJECT_DIR$/components/msgalert/msgalert.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/components/alert/close.png" afterPath="$PROJECT_DIR$/components/msgalert/close.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/components/alert/tips.png" afterPath="$PROJECT_DIR$/components/msgalert/tips.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/example/alert-example/alert-example.jsx" afterPath="$PROJECT_DIR$/example/msgalert-example/msgalert-example.jsx" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -39,26 +39,62 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <leaf />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="route.jsx" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/route/route.jsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="216">
+              <caret line="23" column="93" lean-forward="false" selection-start-line="23" selection-start-column="93" selection-end-line="23" selection-end-column="93" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/package.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-189">
+              <caret line="31" column="25" lean-forward="false" selection-start-line="31" selection-start-column="25" selection-end-line="31" selection-end-column="25" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="webpack.config.debug.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/webpack.config.debug.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-200">
+              <caret line="89" column="27" lean-forward="false" selection-start-line="89" selection-start-column="27" selection-end-line="89" selection-end-column="27" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="14" lean-forward="true" selection-start-line="0" selection-start-column="14" selection-end-line="0" selection-end-column="14" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="tsconfig.json" />
-        <option value="JavaScript File" />
         <option value="SCSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>disabled</find>
-      <find>zhCN</find>
-      <find>$picke-titleFontColor</find>
-      <find>$pickerPlate-height</find>
-      <find>$picker-input-width</find>
-      <find>$picker-input-borderColor;</find>
-      <find>$picker-input-borderColor</find>
       <find>$picker-radius</find>
       <find>$picker-bgColor</find>
       <find>$picker-fontColor</find>
@@ -82,6 +118,13 @@
       <find>selectYearMonth</find>
       <find>cureentYear</find>
       <find>cureentmonth</find>
+      <find>onPageChange</find>
+      <find>checkedSingleChange</find>
+      <find>Checkbox</find>
+      <find>datepicker</find>
+      <find>onSelectDate</find>
+      <find>active</find>
+      <find>'</find>
     </findStrings>
     <replaceStrings>
       <replace>5</replace>
@@ -99,6 +142,7 @@
       <replace>yearArr</replace>
       <replace>$picker-titleFontColor</replace>
       <replace>monthTitle</replace>
+      <replace>&quot;</replace>
     </replaceStrings>
     <dirStrings>
       <dir>F:\joker\react-components\app</dir>
@@ -111,13 +155,7 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/mokeJson/newTableJson.json" />
-        <option value="$PROJECT_DIR$/components/table/pagination/pagination.scss" />
-        <option value="$PROJECT_DIR$/components/table/JokerTable/table.jsx" />
-        <option value="$PROJECT_DIR$/components/checkbox/checkbox.scss" />
-        <option value="$PROJECT_DIR$/api/api.jsx" />
         <option value="$PROJECT_DIR$/components/table/table.scss" />
-        <option value="$PROJECT_DIR$/example/table-example/table-example.jsx" />
         <option value="$PROJECT_DIR$/mokeJson/tableJson.json" />
         <option value="$PROJECT_DIR$/example/timepicker-example/timepicker-example.js" />
         <option value="$PROJECT_DIR$/example/timepicker-example/timepicker-example.scss" />
@@ -136,32 +174,38 @@
         <option value="$PROJECT_DIR$/components/dialog/dialog.scss" />
         <option value="$PROJECT_DIR$/components/msgtips/msgtips.jsx" />
         <option value="$PROJECT_DIR$/example/alert-example/alert-example.jsx" />
-        <option value="$PROJECT_DIR$/example/msgalert-example/msgalert-example.jsx" />
         <option value="$PROJECT_DIR$/example/datepicker-example/datepicker.js" />
-        <option value="$PROJECT_DIR$/route/route.jsx" />
-        <option value="$PROJECT_DIR$/app/aside/aside.jsx" />
         <option value="$PROJECT_DIR$/app/home/home.jsx" />
         <option value="$PROJECT_DIR$/components/checkbox/checkbox.jsx" />
         <option value="$PROJECT_DIR$/components/msgalert/msgalert.jsx" />
-        <option value="$PROJECT_DIR$/components/table/table.jsx" />
         <option value="$PROJECT_DIR$/components/table/pagination/pagination.jsx" />
         <option value="$PROJECT_DIR$/components/util/util.jsx" />
         <option value="$PROJECT_DIR$/app/login/login.scss" />
-        <option value="$PROJECT_DIR$/asset/style/common.scss" />
         <option value="$PROJECT_DIR$/components/datepicker/datepicker.scss" />
         <option value="$PROJECT_DIR$/components/datepicker/monthpicker.js" />
         <option value="$PROJECT_DIR$/components/datepicker/style/dominant.scss" />
-        <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/example/datepicker-example/datepicker-example.scss" />
+        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/components/datepicker/style/common.scss" />
+        <option value="$PROJECT_DIR$/components/table/table.jsx" />
+        <option value="$PROJECT_DIR$/example/table-example/table-example.jsx" />
+        <option value="$PROJECT_DIR$/.babelrc" />
+        <option value="$PROJECT_DIR$/example/msgalert-example/childRouter-example.js" />
+        <option value="$PROJECT_DIR$/asset/style/common.scss" />
+        <option value="$PROJECT_DIR$/components/datepicker/monthpicker.jsx" />
+        <option value="$PROJECT_DIR$/components/datepicker/style/monthpicker.scss" />
+        <option value="$PROJECT_DIR$/app/aside/aside.jsx" />
         <option value="$PROJECT_DIR$/components/datepicker/style/datepicker.scss" />
         <option value="$PROJECT_DIR$/components/datepicker/datepicker.jsx" />
         <option value="$PROJECT_DIR$/example/datepicker-example/datepicker-example.jsx" />
-        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/route/asyncComponent.js" />
+        <option value="$PROJECT_DIR$/route/asyncComponent.jsx" />
+        <option value="$PROJECT_DIR$/example/msgalert-example/msgalert-example.jsx" />
+        <option value="$PROJECT_DIR$/route/route.jsx" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/webpack.config.debug.js" />
         <option value="$PROJECT_DIR$/webpack.config.release.js" />
-        <option value="$PROJECT_DIR$/components/datepicker/style/common.scss" />
-        <option value="$PROJECT_DIR$/components/datepicker/monthpicker.jsx" />
-        <option value="$PROJECT_DIR$/components/datepicker/style/monthpicker.scss" />
       </list>
     </option>
   </component>
@@ -197,8 +241,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -220,7 +264,7 @@
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="nodejs_interpreter_path" value="E:/Program Files/nodejs/node" />
     <property name="list.type.of.created.stylesheet" value="SCSS" />
-    <property name="last_opened_file_path" value="F:/stewardship-report-web" />
+    <property name="last_opened_file_path" value="F:/timesheet/timesheet-front" />
     <property name="editorconfig.notification" value="spaces" />
   </component>
   <component name="RecentsManager">
@@ -249,21 +293,21 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration default="false" name="release" type="js.build_tools.npm" factoryName="npm" temporary="true" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="release" />
-      </scripts>
-      <node-interpreter value="project" />
-      <envs />
-      <method />
-    </configuration>
     <configuration default="false" name="debug" type="js.build_tools.npm" factoryName="npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
       <scripts>
         <script value="debug" />
+      </scripts>
+      <node-interpreter value="E:/Nvm/nodejs/node" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="release" type="js.build_tools.npm" factoryName="npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="release" />
       </scripts>
       <node-interpreter value="E:/Nvm/nodejs/node" />
       <envs />
@@ -336,13 +380,13 @@
       <method />
     </configuration>
     <list size="2">
-      <item index="0" class="java.lang.String" itemvalue="npm.release" />
-      <item index="1" class="java.lang.String" itemvalue="npm.debug" />
+      <item index="0" class="java.lang.String" itemvalue="npm.debug" />
+      <item index="1" class="java.lang.String" itemvalue="npm.release" />
     </list>
     <recent_temporary>
       <list size="2">
-        <item index="0" class="java.lang.String" itemvalue="npm.debug" />
-        <item index="1" class="java.lang.String" itemvalue="npm.release" />
+        <item index="0" class="java.lang.String" itemvalue="npm.release" />
+        <item index="1" class="java.lang.String" itemvalue="npm.debug" />
       </list>
     </recent_temporary>
   </component>
@@ -404,24 +448,43 @@
       <workItem from="1514257565831" duration="7000" />
       <workItem from="1514257772510" duration="91000" />
       <workItem from="1514266276409" duration="609000" />
+      <workItem from="1514279659464" duration="2649000" />
+      <workItem from="1514296721988" duration="1032000" />
+      <workItem from="1514300911615" duration="30000" />
+      <workItem from="1514428455562" duration="203000" />
+      <workItem from="1514544329545" duration="647000" />
+      <workItem from="1514976615640" duration="876000" />
+      <workItem from="1515029953898" duration="89000" />
+      <workItem from="1515030344060" duration="25000" />
+      <workItem from="1515030980456" duration="91000" />
+      <workItem from="1515032326458" duration="175000" />
+      <workItem from="1515034406883" duration="474000" />
+      <workItem from="1515036922539" duration="1017000" />
+      <workItem from="1515050464257" duration="1301000" />
+      <workItem from="1515059957964" duration="2053000" />
+      <workItem from="1515119578175" duration="929000" />
+      <workItem from="1515121011680" duration="2413000" />
+      <workItem from="1515132701868" duration="2231000" />
+      <workItem from="1515381105892" duration="5798000" />
+      <workItem from="1515395671219" duration="8196000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="284267000" />
+    <option name="totallyTimeSpent" value="314496000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1376" height="754" extended-state="0" />
+    <frame x="-8" y="-8" width="1376" height="754" extended-state="7" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19133034" sideWeight="0.5668277" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19656204" sideWeight="0.46859902" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="调试" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15396114" sideWeight="0.43317232" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19656204" sideWeight="0.531401" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2689211" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="运行" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4380032" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38808373" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="运行" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34299517" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -449,48 +512,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/api/api.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="4" column="42" lean-forward="false" selection-start-line="4" selection-start-column="42" selection-end-line="4" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mokeJson/tableJson.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="45" column="8" lean-forward="false" selection-start-line="45" selection-start-column="8" selection-end-line="45" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/example/timepicker-example/timepicker-example.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/example/timepicker-example/timepicker-example.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="163">
-          <caret line="29" column="57" lean-forward="false" selection-start-line="29" selection-start-column="57" selection-end-line="29" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/rc-calendar/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-810">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/rc-calendar/lib/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/rc-calendar/lib/Picker.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-4779">
@@ -519,20 +540,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/components/timepicker/single-timepicker.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="6" column="32" lean-forward="true" selection-start-line="6" selection-start-column="32" selection-end-line="6" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/components/timepicker/month-timepicker.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="6" column="48" lean-forward="true" selection-start-line="6" selection-start-column="48" selection-end-line="6" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/components/timepicker/single-timepicker.jsx" />
+    <entry file="file://$PROJECT_DIR$/components/timepicker/month-timepicker.jsx" />
     <entry file="file://$PROJECT_DIR$/components/msgtips/msgtips.scss" />
     <entry file="file://$PROJECT_DIR$/components/dialog/dialog.scss">
       <provider selected="true" editor-type-id="text-editor">
@@ -557,27 +566,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/components/msgtips/msgtips.jsx" />
-    <entry file="file://$PROJECT_DIR$/app/aside/aside.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
-          <caret line="33" column="29" lean-forward="true" selection-start-line="33" selection-start-column="29" selection-end-line="33" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/route/route.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="27" column="73" lean-forward="true" selection-start-line="27" selection-start-column="73" selection-end-line="27" selection-end-column="73" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/home/home.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="4" column="38" lean-forward="false" selection-start-line="4" selection-start-column="38" selection-end-line="4" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/login/login.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-5629">
@@ -620,24 +608,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/example/checkbox-example/checkbox-example.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="12" column="54" lean-forward="false" selection-start-line="12" selection-start-column="54" selection-end-line="12" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/example/dialog-example/dialog-example.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="406">
           <caret line="28" column="41" lean-forward="true" selection-start-line="28" selection-start-column="41" selection-end-line="28" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/example/msgalert-example/msgalert-example.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="27" column="34" lean-forward="false" selection-start-line="27" selection-start-column="34" selection-end-line="27" selection-end-column="34" />
         </state>
       </provider>
     </entry>
@@ -648,13 +622,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/asset/style/dominant.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="27">
-          <caret line="1" column="14" lean-forward="true" selection-start-line="1" selection-start-column="14" selection-end-line="1" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/login/login.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
@@ -662,38 +629,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/asset/style/common.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="23" column="36" lean-forward="true" selection-start-line="23" selection-start-column="36" selection-end-line="23" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/components/table/table.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="81" column="5" lean-forward="true" selection-start-line="81" selection-start-column="5" selection-end-line="81" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/example/table-example/table-example.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="41">
-          <caret line="98" column="34" lean-forward="false" selection-start-line="98" selection-start-column="34" selection-end-line="98" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/components/select/select.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="21" column="6" lean-forward="false" selection-start-line="21" selection-start-column="6" selection-end-line="25" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="14" column="22" lean-forward="false" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -711,56 +650,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/components/datepicker/datepicker.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1440">
-          <caret line="15" column="33" lean-forward="true" selection-start-line="15" selection-start-column="33" selection-end-line="15" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/components/datepicker/style/datepicker.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="238" column="26" lean-forward="false" selection-start-line="238" selection-start-column="26" selection-end-line="238" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/example/datepicker-example/datepicker-example.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="23" column="28" lean-forward="false" selection-start-line="23" selection-start-column="28" selection-end-line="23" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/components/table/table.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="14" column="11" lean-forward="false" selection-start-line="14" selection-start-column="10" selection-end-line="14" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Desktop/font_496271_al41bcjb63cjtt9/demo.css" />
-    <entry file="file://$PROJECT_DIR$/webpack.config.release.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="541">
-          <caret line="40" column="26" lean-forward="false" selection-start-line="40" selection-start-column="26" selection-end-line="40" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webpack.config.debug.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="36" column="21" lean-forward="false" selection-start-line="36" selection-start-column="21" selection-end-line="41" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/components/datepicker/style/monthpicker.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="27">
-          <caret line="34" column="18" lean-forward="false" selection-start-line="34" selection-start-column="18" selection-end-line="34" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
@@ -775,10 +665,191 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/components/datepicker/monthpicker.jsx">
+    <entry file="file://$PROJECT_DIR$/example/table-example/table-example.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="541">
-          <caret line="118" column="58" lean-forward="false" selection-start-line="118" selection-start-column="58" selection-end-line="118" selection-end-column="58" />
+          <caret line="90" column="27" lean-forward="false" selection-start-line="90" selection-start-column="27" selection-end-line="90" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/table/table.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="98" column="45" lean-forward="true" selection-start-line="98" selection-start-column="45" selection-end-line="98" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/table/table.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="27">
+          <caret line="6" column="31" lean-forward="false" selection-start-line="6" selection-start-column="31" selection-end-line="6" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/home/home.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="4" column="38" lean-forward="false" selection-start-line="4" selection-start-column="38" selection-end-line="4" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/layout.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="918">
+          <caret line="34" column="9" lean-forward="true" selection-start-line="34" selection-start-column="9" selection-end-line="34" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.babelrc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="7" column="14" lean-forward="true" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example/checkbox-example/checkbox-example.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-320">
+          <caret line="17" column="10" lean-forward="false" selection-start-line="17" selection-start-column="10" selection-end-line="17" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example/msgalert-example/childRouter-example.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="2" column="6" lean-forward="false" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/asset/style/dominant.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="27">
+          <caret line="1" column="22" lean-forward="false" selection-start-line="1" selection-start-column="22" selection-end-line="1" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/asset/style/common.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="27">
+          <caret line="23" column="27" lean-forward="false" selection-start-line="23" selection-start-column="27" selection-end-line="23" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/aside/aside.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="33" column="29" lean-forward="false" selection-start-line="33" selection-start-column="29" selection-end-line="33" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/datepicker/style/monthpicker.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="554">
+          <caret line="119" column="24" lean-forward="false" selection-start-line="119" selection-start-column="24" selection-end-line="119" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/datepicker/style/datepicker.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="262">
+          <caret line="243" column="11" lean-forward="true" selection-start-line="243" selection-start-column="11" selection-end-line="243" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/datepicker/datepicker.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="365">
+          <caret line="373" column="17" lean-forward="true" selection-start-line="373" selection-start-column="17" selection-end-line="373" selection-end-column="17" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example/datepicker-example/datepicker-example.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="10" lean-forward="true" selection-start-line="9" selection-start-column="10" selection-end-line="9" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/datepicker/monthpicker.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="170" column="110" lean-forward="false" selection-start-line="170" selection-start-column="86" selection-end-line="170" selection-end-column="110" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/route/asyncComponent.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-350">
+          <caret line="5" column="10" lean-forward="true" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example/msgalert-example/msgalert-example.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="972">
+          <caret line="36" column="30" lean-forward="false" selection-start-line="36" selection-start-column="30" selection-end-line="36" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/route/route.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="23" column="93" lean-forward="false" selection-start-line="23" selection-start-column="93" selection-end-line="23" selection-end-column="93" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webpack.config.release.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="82" column="10" lean-forward="true" selection-start-line="82" selection-start-column="10" selection-end-line="82" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-189">
+          <caret line="31" column="25" lean-forward="false" selection-start-line="31" selection-start-column="25" selection-end-line="31" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webpack.config.debug.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-200">
+          <caret line="89" column="27" lean-forward="false" selection-start-line="89" selection-start-column="27" selection-end-line="89" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="14" lean-forward="true" selection-start-line="0" selection-start-column="14" selection-end-line="0" selection-end-column="14" />
+          <folding />
         </state>
       </provider>
     </entry>

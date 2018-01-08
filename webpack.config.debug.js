@@ -98,6 +98,6 @@ module.exports={
             canPrint: true                             //设置是否可以向控制台打日志,默认为true;
         }),
     ],
-    devtool:"sourceMap"
+    devtool:"inline-source-map"
 };
 

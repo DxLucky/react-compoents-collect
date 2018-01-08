@@ -24,11 +24,10 @@ class DatePickerExample extends React.Component{
                             onDateChange={this.onDateChange}
                         />
                     </li>
-                    <li><br/></li>
-                    <li><br/></li>
                     <li>
                         <span>日期选择</span>
                         <DatePicker
+                            defaultvalue="2017-12-22"
                             onDateChange={this.onDateChange}
                         />
                     </li>

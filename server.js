@@ -5,6 +5,7 @@ new WebpackDevServer(webpack(config),{
     publicPath:config.output.publicPath,
     hot:true,
     historyApiFallback:true,
+	disableHostCheck: true,
     // proxy: {
     //     '/manhour': {
     //         target: 'http://10.112.75.15',//代理配置

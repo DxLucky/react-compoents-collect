@@ -33,13 +33,11 @@ class TableExampleNew extends React.Component{
         super(props);
         this.state={
             data:[],
-            total:"",
             loading:false,
         };
         this.searchData=this.searchData.bind(this);
         this.onPageChange=this.onPageChange.bind(this);
         this.onCellClick=this.onCellClick.bind(this);
-        this.checkedArrCall=this.checkedArrCall.bind(this);
     }
     searchData(){
         this.setState({loading:true});
@@ -67,13 +65,9 @@ class TableExampleNew extends React.Component{
     onCellClick(data,type){
         console.log(data,type,"type")
     }
-    checkedArrCall(selectArr){
-        console.log(selectArr,'selectArr');//已经选中的数据
-    }
     render(){
-        let {data,loading,total}=this.state;
+        let {data,loading}=this.state;
         const column=[
-            {title:"checkBox",colName:"checkBox",width:"100px"},
             {title:"序列号",colName:"orderNum",width:"100px"},
             {title:"姓名",colName:"name"},
             {title:"年龄",colName:"age",width:"100px",fontColor:"#f73352",sort:true},
@@ -99,11 +93,6 @@ class TableExampleNew extends React.Component{
                 <Table data={data}
                        column={column}
                        loading={loading}
-                       onSelect={this.checkedArrCall}//当有复选框的时候配置选择回调
-                       pagination={{
-                           total:total,
-                           onPageChange:this.onPageChange
-                       }}
                 />
             </div>
         )
