@@ -32,9 +32,6 @@ class Aside extends React.Component{
                         <li>
                             <NavLink to="/datepicker" activeStyle={{color: '#f73352'}}>日期选择器</NavLink>
                         </li>
-                        <li>
-                            <NavLink to="/timepicker" activeStyle={{color: '#f73352'}}>日期选择框</NavLink>
-                        </li>
                     </ul>
                 </div>
                 <i className="iconfont icon-tuichu1" onClick={this.props.exitLogin}/>

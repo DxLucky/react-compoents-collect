@@ -5,17 +5,19 @@ import "./style/datepicker.scss";
 class DatePicker extends React.Component{
     constructor(props){
         super(props);
+        let onSelectDateDay=Number(moment(props.defaultvalue).format("DD") || moment().format("DD"));//初始天
         this.state={
             initMonth:moment(props.defaultvalue).format("YYYY-MM") || moment().format("YYYY-MM"),//初始年月
             yearTitle:moment(props.defaultvalue).format("YYYY") || moment().format("YYYY"),//初始年
             monthTitle:Number(moment(props.defaultvalue).format("MM") || moment().format("MM")),//初始月
             onSelectDateVal:props.defaultvalue?moment(props.defaultvalue).format("YYYY-MM-DD"):"",//初始日期
-            calendarData:this.monthDay(moment(props.defaultvalue).format("YYYY-MM") || moment().format("YYYY-MM")),//初始日历
+            calendarData:this.monthDay(moment(props.defaultvalue).format("YYYY-MM") || moment().format("YYYY-MM"),onSelectDateDay),//初始日历
             showDatePicker:false,
             showMonthPicker:false,
             showYearPicker:false,
             onSelectDateYear:moment(props.defaultvalue).format("YYYY") || moment().format("YYYY"),
             onSelectDateMonth:Number(moment(props.defaultvalue).format("MM") || moment().format("MM")),//初始月
+            onSelectDateDay
         };
         this.monthDay=this.monthDay.bind(this);
         this.turnYearMonth=this.turnYearMonth.bind(this);
@@ -24,15 +26,15 @@ class DatePicker extends React.Component{
         this.showPicker=this.showPicker.bind(this);
         this.showDatePicker=this.showDatePicker.bind(this);
         this.onSelectDate=this.onSelectDate.bind(this);
+        this.onSelectToday=this.onSelectToday.bind(this);
     }
-    monthDay(initMonth){
+    monthDay(initMonth,onSelectDateDay){
         const daysArr =[], // 6*7的日历数组
               currentWeekday = moment(initMonth).date(1).weekday()-1, // 获取当月1日为星期几
               lastMonthDays = moment(initMonth).subtract(1, 'month').daysInMonth(), // 获取上月天数
               monthTitleDays = moment(initMonth).daysInMonth(),// 获取当月天数
               getDay = day => (day <= lastMonthDays ? day : (day <= (lastMonthDays + monthTitleDays)) ? day - lastMonthDays : day - (lastMonthDays + monthTitleDays)), // 日期处理
-              lineNum=Math.ceil((monthTitleDays + currentWeekday+1)/7);//根据每月的天数确定行数
-
+              lineNum=Math.ceil((monthTitleDays + currentWeekday+1)/7);//根据每月的天数确定行
         for(let j=0;j<lineNum; j += 1){
             daysArr[j]=[];
             for(let i = 0; i < 7; i += 1){
@@ -52,10 +54,11 @@ class DatePicker extends React.Component{
                 }
             }
         }
+        console.log(daysArr,'daysArr')
         return daysArr;
     }
     reRenderCalender(initMonth,yearTitle,monthTitle){
-        let  calendarData=this.monthDay(initMonth);
+        let  calendarData=this.monthDay(initMonth,this.state.onSelectDateDay);
         this.setState({calendarData,initMonth,yearTitle,monthTitle})
     }
     turnYearMonth(y=0,m=0){
@@ -86,8 +89,16 @@ class DatePicker extends React.Component{
         let {yearTitle,monthTitle}=this.state,
             {onDateChange}=this.props,
              monthTitlePad=String(monthTitle).padStart(2,0),
-             onSelectDateVal=`${yearTitle}-${monthTitlePad}-${day}`;
-        this.setState({onSelectDateVal,showDatePicker:false});
+             onSelectDateVal=`${yearTitle}-${monthTitlePad}-${day}`,
+             onSelectDateDay=Number(day);
+        this.setState({onSelectDateVal,onSelectDateDay,showDatePicker:false});
+        onDateChange && onDateChange(onSelectDateVal);
+    }
+    onSelectToday(){
+        let onSelectDateVal=moment().format("YYYY-MM-DD"),
+            onSelectDateDay=Number(moment().format("DD")),
+            {onDateChange}=this.props;
+        this.setState({onSelectDateVal,onSelectDateDay,showDatePicker:false});
         onDateChange && onDateChange(onSelectDateVal);
     }
     componentWillMount() {
@@ -113,10 +124,14 @@ class DatePicker extends React.Component{
              yearTitle,
              showDatePicker,
              onSelectDateVal,
+             onSelectDateDay,
              monthTitle}=this.state;
         return(
             <div className="datepicker" onClick={(e)=>{e.nativeEvent.stopImmediatePropagation()}}>
-                <input placeholder="请选择日期" value={onSelectDateVal} readOnly onClick={this.showDatePicker}/>
+                <div onClick={this.showDatePicker}>
+                    <input placeholder="请选择日期" value={onSelectDateVal} readOnly/>
+                    <i className="iconfont icon-rili"/>
+                </div>
                 {
                     showDatePicker?
                         <div className="datepicker-plate">
@@ -176,6 +191,7 @@ class DatePicker extends React.Component{
                                                                         key={j}
                                                                         dayDetail={col}
                                                                         onSelectDate={this.onSelectDate}
+                                                                        onSelectDateDay={onSelectDateDay}
                                                         />
                                                     })
                                                 }
@@ -185,7 +201,7 @@ class DatePicker extends React.Component{
                             }
                         </div>
                         <ul className="plate-footer">
-                            <li>
+                            <li onClick={this.onSelectToday}>
                                 {
                                     !showMonthPicker && !showYearPicker ?
                                         <span>今天</span>:null
@@ -346,11 +362,14 @@ class EachDay extends React.Component{
         super(props)
     }
     render(){
-        let {dayDetail,onSelectDate}=this.props;
+        let {dayDetail,onSelectDate,onSelectDateDay}=this.props;
         switch (dayDetail){
             case null:return(<li/>);break;
             default:return(
-                <li className={classNames("eachDay",{weekend:dayDetail.weekend})}
+                <li className={classNames("eachDay",
+                    {weekend:dayDetail.weekend},
+                    {active:dayDetail.day===onSelectDateDay})
+                }
                     onClick={(e)=>{onSelectDate(e,dayDetail.day)}}
                 >
                     {dayDetail.day}

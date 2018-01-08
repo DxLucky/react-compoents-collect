@@ -1,7 +1,8 @@
 import React from "react";
 import Present from "../../app/present/present.jsx";
 import MsgAlert from "../../components/msgalert/msgalert.jsx";
-class AlertExample extends React.Component{
+import {NavLink} from 'react-router-dom';
+class MsgAlertExample extends React.Component{
     constructor(props){
         super(props);
         this.componentAlert=this.componentAlert.bind(this);
@@ -28,9 +29,10 @@ class AlertExample extends React.Component{
                 <Present title="消息提示框" introduce="兼容IE8"/>
                 <button className="btnCommon" onClick={this.showAlert}>点我弹出</button>
                 <button className="btnCommon" onClick={this.showAlertVar}>点我弹出</button>
+                <p><NavLink to="/alert/childRouter" activeStyle={{color: '#f73352'}}>点我跳转子级路由</NavLink></p>
             </div>
         )
     }
 }
-export default AlertExample
+export default MsgAlertExample
 

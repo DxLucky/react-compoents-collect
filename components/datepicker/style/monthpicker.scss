@@ -7,15 +7,13 @@
     @include inputStyle;
     transition: all .1s linear;
     &:hover{
-      cursor: default;
+      cursor: pointer;
       border: 1px solid $dominant-hue;
       transition: all .1s linear;
-      input{
-        cursor: default;
-      }
     }
     input{
       border: none;
+      cursor: pointer;
       height: $picker-input-height;
       background-color: transparent;
       width:($picker-input-width)-10px;
@@ -27,17 +25,6 @@
       &.icon-rili{
         color: $picker-input-borderColor;
         font-size: 18px;
-      }
-      &.icon-shanchu{
-        color: red;
-        font-size: 14px;
-        transition: all .1s linear;
-        z-index: 5;
-        &:hover{
-          cursor: pointer;
-          color: $picker-input-borderColor;
-          transition: all .1s linear;
-        }
       }
     }
   }

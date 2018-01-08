@@ -91,11 +91,11 @@ class Table extends React.Component{
     render(){
         let {sortOrder,checkedAll,initData}=this.state;
         let {
-           column,//展现的列
-           loading,//加载中图片，若不传默认false
-           hasBoder,//是否有边框,若不传默认false
-           tableWidth,//表格宽度(如tableWidth="500px")，若不传默认100%
-           pagination//是否有分页，若不传默认false
+            column,//展现的列
+            loading,//加载中图片，若不传默认false
+            hasBoder,//是否有边框,若不传默认false
+            tableWidth,//表格宽度(如tableWidth="500px")，若不传默认100%
+            pagination//是否有分页，若不传默认false
         }=this.props;
         let totalColNum=column.length;
         initData.length>0 && initData.map((item,i)=>{
@@ -108,7 +108,7 @@ class Table extends React.Component{
                     case "orderNum":formatcolVal=sortOrder+i+1;break;
                     case "checkBox":
                         formatcolVal=
-                        <Checkbox sendChecked={item.isChecked} onCheckedChange={this.checkedSingleChange} itemDetail={item}/>;
+                            <Checkbox sendChecked={item.isChecked} onCheckedChange={this.checkedSingleChange} itemDetail={item}/>;
                         break;
                     case "operate":
                         let keyVal=Object.keys(colItem.cell)[0],Cell=colItem.cell[keyVal];
@@ -120,7 +120,7 @@ class Table extends React.Component{
                                     colItem.onCellEvent(itemDetailCallBk,...others)}
                                 }
                             />;
-                            break;
+                        break;
                     default:formatcolVal=item[colItem.colName]
                 }
                 let formatObj={};
@@ -133,29 +133,29 @@ class Table extends React.Component{
             <div className={classnames("tableBox",{hasBoder:hasBoder})} style={{width:tableWidth}}>
                 <table cellPadding="0" cellSpacing="0">
                     <thead>
-                        <tr>
-                            {column.map((item,i)=>{
-                                return(
-                                    <th key={i}
-                                        style={{width:item.width}}
-                                    >
+                    <tr>
+                        {column.map((item,i)=>{
+                            return(
+                                <th key={i}
+                                    style={{width:item.width}}
+                                >
                                         <span>
                                             {item.title==="checkBox"?
                                                 <Checkbox sendChecked={checkedAll} onCheckedChange={this.checkedAllChange}/>:
                                                 item.title
                                             }
                                         </span>
-                                        {
-                                            item.sort?
-                                                <ul className="attachSign">
-                                                    <li className="asc" onClick={()=>{this.sortOption(item.colName,"asc")}}/>
-                                                    <li className="des" onClick={()=>{this.sortOption(item.colName,"des")}}/>
-                                                </ul>:null
-                                        }
-                                    </th>
-                                )
-                            })}
-                        </tr>
+                                    {
+                                        item.sort?
+                                            <ul className="attachSign">
+                                                <li className="asc" onClick={()=>{this.sortOption(item.colName,"asc")}}/>
+                                                <li className="des" onClick={()=>{this.sortOption(item.colName,"des")}}/>
+                                            </ul>:null
+                                    }
+                                </th>
+                            )
+                        })}
+                    </tr>
 
 
                     </thead>

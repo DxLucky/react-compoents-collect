@@ -1,35 +1,34 @@
 import React from "react";
-import {Route,HashRouter} from "react-router-dom";
-import Layout from "../src/layout.jsx";
+import {Route,BrowserRouter as Router,Switch} from "react-router-dom";
+import Layout from "../src/layout.jsx";//布局
 import Home from "../app/home/home.jsx";//主页
-import SelectExample from "../example/select-example/selcect-example.jsx";//下拉框
-import AlertExample from "../example/msgalert-example/msgalert-example.jsx";//alert框
-import CheckboxExample from "../example/checkbox-example/checkbox-example.jsx";//多选框
-import TableExample from "../example/table-example/table-example.jsx"////表格
-import DialogExample from "../example/dialog-example/dialog-example.jsx";//模态框
-import TimePickerExample from "../example/timepicker-example/timepicker-example.jsx";//时间选择框
-import DatePickerExample from "../example/datepicker-example/datepicker-example.jsx";//日期选择器
-// const CheckboxExample= (location , cb) => { //工时日历
-//     require.ensure([],(require) =>{
-//         cb(null,{main:require("../app/checkbox-example/checkbox-example.jsx"),sidebar:'hours'});
-//     },'hours')
-// };
+import asyncComponent from "./asyncComponent.jsx";//按需加载
+
+const SelectExample=asyncComponent(()=>import("../example/select-example/selcect-example.jsx"));//下拉选择框
+const CheckboxExample=asyncComponent(()=>import("../example/checkbox-example/checkbox-example.jsx"));//复选框
+const MsgAlertExample=asyncComponent(()=>import("../example/msgalert-example/msgalert-example.jsx"));//消息提示框
+const DialogExample=asyncComponent(()=>import("../example/dialog-example/dialog-example.jsx"));//模态框
+const TableExample=asyncComponent(()=>import("../example/table-example/table-example.jsx"));//表格
+const DatePickerExample=asyncComponent(()=>import("../example/datepicker-example/datepicker-example.jsx"));//日期选择器
 
 class Routers extends React.Component{
     render(){
         return (
-            <HashRouter>
+            <Router>
                 <Layout>
-                    <Route exact path="/" component={Home}/>
-                    <Route exact path="/selcet" component={SelectExample}/>
-                    <Route exact path="/checkbox" component={CheckboxExample}/>
-                    <Route exact path="/alert" component={AlertExample}/>
-                    <Route exact path="/dialog" component={DialogExample}/>
-                    <Route exact path="/table" component={TableExample}/>
-                    <Route exact path="/timepicker" component={TimePickerExample}/>
-                    <Route exact path="/datepicker" component={DatePickerExample}/>
+                    <Switch>
+                        <Route exact path="/" component={Home}/>
+                        <Route exact path="/selcet" component={SelectExample}/>
+                        <Route exact path="/checkbox" component={CheckboxExample}/>
+                        <Route exact path="/alert" component={MsgAlertExample}>
+                            {/*<Route path="/childRouter" component={ChildRouterExample}/>*/}
+                        </Route>
+                        <Route exact path="/dialog" component={DialogExample}/>
+                        <Route exact path="/table" component={TableExample}/>
+                        <Route exact path="/datepicker" component={DatePickerExample}/>
+                    </Switch>
                 </Layout>
-            </HashRouter>
+            </Router>
         )
     }
 }
