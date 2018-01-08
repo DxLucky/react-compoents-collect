@@ -10,6 +10,7 @@ const MsgAlertExample=asyncComponent(()=>import("../example/msgalert-example/msg
 const DialogExample=asyncComponent(()=>import("../example/dialog-example/dialog-example.jsx"));//模态框
 const TableExample=asyncComponent(()=>import("../example/table-example/table-example.jsx"));//表格
 const DatePickerExample=asyncComponent(()=>import("../example/datepicker-example/datepicker-example.jsx"));//日期选择器
+const ChildRouterExample=asyncComponent(()=>import("../example/msgalert-example/childRouter-example.jsx"));//子级路由
 
 class Routers extends React.Component{
     render(){
@@ -20,9 +21,8 @@ class Routers extends React.Component{
                         <Route exact path="/" component={Home}/>
                         <Route exact path="/selcet" component={SelectExample}/>
                         <Route exact path="/checkbox" component={CheckboxExample}/>
-                        <Route exact path="/alert" component={MsgAlertExample}>
-                            {/*<Route path="/childRouter" component={ChildRouterExample}/>*/}
-                        </Route>
+                        <Route exact path="/alert" component={MsgAlertExample}/>
+                        <Route path="/alert/childRouter" component={ChildRouterExample}/>
                         <Route exact path="/dialog" component={DialogExample}/>
                         <Route exact path="/table" component={TableExample}/>
                         <Route exact path="/datepicker" component={DatePickerExample}/>

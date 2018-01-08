@@ -8,6 +8,7 @@ class MsgAlertExample extends React.Component{
         this.componentAlert=this.componentAlert.bind(this);
         this.showAlert=this.showAlert.bind(this);
         this.showAlertVar=this.showAlertVar.bind(this);
+        this.skipChildRoute=this.skipChildRoute.bind(this);
     }
     componentAlert(msg){
         MsgAlert.showMsg({
@@ -23,13 +24,17 @@ class MsgAlertExample extends React.Component{
         let data={tip:"这是错误提示"};
         this.componentAlert(data.tip)
     }
+    skipChildRoute(){
+        this.props.history.push("/alert/childRouter")
+    }
     render(){
         return(
             <div>
                 <Present title="消息提示框" introduce="兼容IE8"/>
                 <button className="btnCommon" onClick={this.showAlert}>点我弹出</button>
                 <button className="btnCommon" onClick={this.showAlertVar}>点我弹出</button>
-                <p><NavLink to="/alert/childRouter" activeStyle={{color: '#f73352'}}>点我跳转子级路由</NavLink></p>
+                <button className="btnCommon" onClick={this.skipChildRoute}>点我跳转子级路由</button>
+                <p style={{marginTop:"15px"}}><NavLink to="/alert/childRouter" activeStyle={{color: '#f73352'}}>点我跳转子级路由</NavLink></p>
             </div>
         )
     }
