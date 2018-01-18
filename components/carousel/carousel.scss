@@ -7,11 +7,18 @@ $textAreaBgColor:rgba(0,0,0,0.45);
 $textAreaHeight:50px;
 $textFontSize:14px;
 $textFontColor:#fff;
+@keyframes fadeInOut {
+  0%   {opacity: 0}
+  100% {opacity: 1}
+}
 .carouselBox{
   position: relative;
   overflow: hidden;
   width: $carouselWidth;
   height: $carouselHeight;
+  .imgBox{
+    animation: fadeInOut .5s linear both;
+  }
   .textBox{
     position: absolute;
     bottom: 0;
@@ -56,4 +63,22 @@ $textFontColor:#fff;
       }
     }
   }
+}
+
+.carousel-enter {
+  opacity: 0.01;
+}
+
+.carousel-enter.carousel-enter-active {
+  opacity: 1;
+  transition: opacity 300ms ease-in;
+}
+
+.carousel-leave {
+  opacity: 1;
+}
+
+.carousel-leave.carousel-leave-active {
+  opacity: 0.01;
+  transition: opacity 200ms ease-in;
 }

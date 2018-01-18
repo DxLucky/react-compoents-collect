@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from 'prop-types';
 import classnames from "classnames";
+import ReactCSSTransitionGroup from "react-addons-css-transition-group";
 import "./carousel.scss";
 
 class Carousel extends React.Component{
@@ -20,12 +21,6 @@ class Carousel extends React.Component{
         this.autoRoll=undefined;
     }
     componentWillMount(){
-
-        // this.autoPlay=setInterval(()=>{
-        //     let {imgIndex}=this.state,
-        //          index= imgIndex===(carouselArr.length-1) ? 0: ++imgIndex;
-        //     this.setState({imgIndex:index})
-        // },2000)
         this.autoPaly()
     }
     autoPaly(){
@@ -48,7 +43,12 @@ class Carousel extends React.Component{
                  onMouseOut={this.autoPaly}
             >
                 <div className="imgBox">
-                    <img src={require(`${cureentImg.url}`)}/>
+                    <ReactCSSTransitionGroup
+                        transitionName="carousel"
+                        transitionEnterTimeout={300}
+                        transitionLeaveTimeout={200}>
+                        <img src={require(`${cureentImg.url}`)} key={cureentImg.url}/>
+                    </ReactCSSTransitionGroup>
                 </div>
                 <div className="textBox">
                     <p>{cureentImg.text}</p>

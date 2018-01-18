@@ -23,10 +23,16 @@ class CarouselExample extends React.Component{
         ];
         return(
             <div>
-                <Present title="轮播"/>
+                <Present title="轮播"
+                         introduce={[
+                             "1、可设置轮播速度",
+                             "2、移入停止轮播，移除继续轮播",
+                             "3、可点击圆点切换轮播"
+                         ]}
+                />
                 <Carousel
                     carouselArr={carouselArr}
-                    intervalTime={1500}
+                    intervalTime={2000}
                 />
             </div>
         )
