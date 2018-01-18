@@ -1,0 +1,59 @@
+$dominant-hue:#f73352;
+$carouselWidth:600px;
+$carouselHeight:338px;
+$circleSize:10px;
+$circleDefaultColor:#ddd;
+$textAreaBgColor:rgba(0,0,0,0.45);
+$textAreaHeight:50px;
+$textFontSize:14px;
+$textFontColor:#fff;
+.carouselBox{
+  position: relative;
+  overflow: hidden;
+  width: $carouselWidth;
+  height: $carouselHeight;
+  .textBox{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: $textAreaBgColor;
+    height: $textAreaHeight;
+    width: 100%;
+    padding:0 15px;
+    box-sizing: border-box;
+    p{
+      color: $textFontColor;
+      font-size: $textFontSize;
+      width: 85%;
+    }
+    i{
+      &.circle{
+        display: inline-block;
+        width:$circleSize;
+        height: $circleSize;
+        border-radius: 50%;
+        background-color: $circleDefaultColor;
+        border: 1px solid $circleDefaultColor;
+        transition: all .1s linear;
+        margin-right: 5px;
+        cursor: pointer;
+        &:hover{
+          border: 1px solid $dominant-hue;
+          transition: all .1s linear;
+        }
+        &:last-child{
+          margin-right: 0;
+        }
+      }
+      &.active{
+        background-color: $dominant-hue;
+        border: 1px solid $dominant-hue;
+        transition: all .1s linear;
+      }
+    }
+  }
+}

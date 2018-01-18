@@ -11,6 +11,7 @@ const DialogExample=asyncComponent(()=>import("../example/dialog-example/dialog-
 const TableExample=asyncComponent(()=>import("../example/table-example/table-example.jsx"));//表格
 const DatePickerExample=asyncComponent(()=>import("../example/datepicker-example/datepicker-example.jsx"));//日期选择器
 const ChildRouterExample=asyncComponent(()=>import("../example/msgalert-example/childRouter-example.jsx"));//子级路由
+const CarouselExample=asyncComponent(()=>import("../example/carousel-example/carousel-example.jsx"));//轮播
 
 class Routers extends React.Component{
     render(){
@@ -26,6 +27,7 @@ class Routers extends React.Component{
                         <Route exact path="/dialog" component={DialogExample}/>
                         <Route exact path="/table" component={TableExample}/>
                         <Route exact path="/datepicker" component={DatePickerExample}/>
+                        <Route exact path="/carousel" component={CarouselExample}/>
                     </Switch>
                 </Layout>
             </Router>
