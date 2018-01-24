@@ -12,6 +12,7 @@ const TableExample=asyncComponent(()=>import("../example/table-example/table-exa
 const DatePickerExample=asyncComponent(()=>import("../example/datepicker-example/datepicker-example.jsx"));//日期选择器
 const ChildRouterExample=asyncComponent(()=>import("../example/msgalert-example/childRouter-example.jsx"));//子级路由
 const CarouselExample=asyncComponent(()=>import("../example/carousel-example/carousel-example.jsx"));//轮播
+const NavTabsExample=asyncComponent(()=>import("../example/navtabs-example/navtabs-example.jsx"));//标签页
 
 class Routers extends React.Component{
     render(){
@@ -28,6 +29,7 @@ class Routers extends React.Component{
                         <Route exact path="/table" component={TableExample}/>
                         <Route exact path="/datepicker" component={DatePickerExample}/>
                         <Route exact path="/carousel" component={CarouselExample}/>
+                        <Route exact path="/navtabs" component={NavTabsExample}/>
                     </Switch>
                 </Layout>
             </Router>

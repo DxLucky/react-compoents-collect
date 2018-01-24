@@ -21,7 +21,7 @@ a{
   }
 }
 body{
-  background-color: #e3d3ba;/*#e3d3ba*/
+  background-color: $body-bgColor;
 }
 .mainBox{
   >.bodyBox{

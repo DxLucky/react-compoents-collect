@@ -6,7 +6,7 @@ class Layout extends React.Component{
     constructor(props){
         super(props);
         this.state={
-            isLogin:true
+            isLogin:false
         };
         this.loginSuccess=this.loginSuccess.bind(this);
         this.exitLogin=this.exitLogin.bind(this);

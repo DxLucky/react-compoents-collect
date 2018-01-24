@@ -1,0 +1,55 @@
+@mixin flexOut{
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+$dominant-hue:#f73352;
+$tabsFontSize:14px;
+$tabsFontColor:#333;
+$borderColor:#bdc1c1;
+$dimFontColor:#999;
+.navTabsBox{
+  min-width: 260px;
+  display: inline-block;
+  >header:first-child{
+    @include flexOut;
+    justify-content: space-between;
+    border-bottom: 1px solid $borderColor;
+    padding-right: 10px;
+    >ul{
+      @include flexOut;
+      justify-content: flex-start;
+      padding-left: 10px;
+      li{
+        cursor: pointer;
+        padding: 5px 10px;
+        font-size: $tabsFontSize;
+        color: $tabsFontColor;
+        border: 1px solid transparent;
+        border-top: 2px solid transparent;
+        position: relative;
+        bottom: -1px;
+        &.hoverActive{
+          border-top: 2px solid $dominant-hue;
+          border-left: 1px solid $borderColor;
+          border-right: 1px solid $borderColor;
+          border-bottom: 1px solid #e3d3ba;
+        }
+      }
+    }
+    >div{
+      cursor: pointer;
+      span,.iconfont{
+        color: $dimFontColor;
+        font-size: 12px;
+        transition: all .1s linear;
+      }
+      &:hover{
+        span,.iconfont{
+          color: $dominant-hue;
+          transition: all .1s linear;
+        }
+      }
+    }
+  }
+}

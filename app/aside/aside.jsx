@@ -35,6 +35,9 @@ class Aside extends React.Component{
                         <li>
                             <NavLink to="/carousel" activeStyle={{color: '#f73352'}}>轮播</NavLink>
                         </li>
+                        <li>
+                            <NavLink to="/navtabs" activeStyle={{color: '#f73352'}}>标签页</NavLink>
+                        </li>
                     </ul>
                 </div>
                 <i className="iconfont icon-tuichu1" onClick={this.props.exitLogin}/>
