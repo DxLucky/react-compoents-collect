@@ -65,3 +65,33 @@ $select-height:28px;
     }
   }
 }
+
+.slide-down-appear,
+.slide-down-enter {
+  opacity: 0;
+  transform: scaleY(0.2);
+  transition-property: opacity, transform;
+  transition-duration: .2s;
+  transition-timing-function: ease;
+  transform-origin: 50% 0;
+}
+
+.slide-down-appear-active,
+.slide-down-enter-active {
+  opacity: 1;
+  transform: scaleY(1);
+}
+
+.slide-down-leave {
+  opacity: 1;
+  transform: scaleY(1);
+  transition-property: opacity, transform;
+  transition-duration: .2s;
+  transition-timing-function: ease;
+  transform-origin: 50% 0;
+}
+
+.slide-down-leave-active {
+  opacity: 0;
+  transform: scaleY(0.2);
+}

@@ -1,5 +1,6 @@
 import React from "react";
 import classNames from "classnames";
+import ReactCSSTransitionGroup from "react-addons-css-transition-group";
 import "./select.scss";
 class Select extends React.Component{
     constructor(props){
@@ -45,19 +46,25 @@ class Select extends React.Component{
         return(
             <div style={{width:width?width:""}} className={classNames('selectBox',this.props.className)}>
                 <label style={{height:height?height:"",lineHeight:height?height:"",textIndent:textIndent?textIndent:""}} onClick={this.changeOptionShow} className={classNames({openOption:isShowOption})} ref="labelSelect">{this.props.defaultSelect}</label>
-                {isShowOption?
-                    <ul style={{width:width?width:"",top:height?`${parseInt(height)+2}px`:""}}>
-                        {
-                            optionGroup.map((item)=>{
-                                return(
-                                    <li style={{textIndent:textIndent?textIndent:""}} key={`${item.value}${item.id}`} onClick={this.onSelect} className={classNames({active:item.value==(selectValue==''?this.props.defaultSelect:selectValue)})}>{item.value}</li>
-                                )
-                            })
-                        }
-                    </ul>
-                    :
-                    null
-                }
+                <ReactCSSTransitionGroup
+                    transitionName='slide-down'
+                    transitionEnterTimeout={300}
+                    transitionLeaveTimeout={300}
+                >
+                    {isShowOption?
+                        <ul style={{width:width?width:"",top:height?`${parseInt(height)+2}px`:""}}>
+                            {
+                                optionGroup.map((item)=>{
+                                    return(
+                                        <li style={{textIndent:textIndent?textIndent:""}} key={`${item.value}${item.id}`} onClick={this.onSelect} className={classNames({active:item.value==(selectValue==''?this.props.defaultSelect:selectValue)})}>{item.value}</li>
+                                    )
+                                })
+                            }
+                        </ul>
+                        :
+                        null
+                    }
+                </ReactCSSTransitionGroup>
             </div>
         )
     }
