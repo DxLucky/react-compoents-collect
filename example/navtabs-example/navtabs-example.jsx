@@ -1,5 +1,6 @@
 import React from "react";
 import NavTabs from "../../components/navtabs/navtabs.jsx";
+import Tabs from "../../components/tabs/tabs.jsx"
 import Present from "../../app/present/present.jsx";
 
 class NavTabsExample extends React.Component{
@@ -22,6 +23,10 @@ class NavTabsExample extends React.Component{
             {title:"标签页1"},
             {title:"标签页2"}
         ];
+        const tabsMenu=[
+            {title:"标签页11"},
+            {title:"标签页22"}
+        ]
         return(
             <div>
                 <Present title="标签页"/>
@@ -45,6 +50,18 @@ class NavTabsExample extends React.Component{
                         }
                     })()}
                 </NavTabs>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <Tabs tabsMenu={tabsMenu}>
+                    <Tabs.Item>
+                        <h1>这是页面1</h1>
+                    </Tabs.Item>
+                    <Tabs.Item>
+                        <h1>这是页面2</h1>
+                    </Tabs.Item>
+                </Tabs>
             </div>
         )
     }

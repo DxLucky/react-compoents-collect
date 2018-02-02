@@ -1,37 +1,46 @@
 import React from "react";
 import classname from "classnames";
 import PropTypes from 'prop-types';
-import "./navtabs.scss";
+import "./tabs.scss";
 
-class NavTabs extends React.Component{
+class Tabs extends React.Component{
     static propTypes = {
-        tabsArr: PropTypes.array,
+        tabsMenu: PropTypes.array,
         width: PropTypes.string,
-        activeIndex: PropTypes.number,
-        hasMore:PropTypes.bool
+        hasMore:PropTypes.bool,
+        children:PropTypes.node
     };
     static defaultProps ={
         hasMore:true
     };
     constructor(props){
         super(props);
+        this.state={
+            activeIndex:0
+        };
         this.changeTabs=this.changeTabs.bind(this);
+        this.getContent=this.getContent.bind(this);
     }
     changeTabs(activeIndex){
-        let {getTabsIndex}=this.props;
-        getTabsIndex && getTabsIndex(activeIndex)
+        this.setState({activeIndex})
     }
-    shouldComponentUpdate(nextProps){
-        return nextProps.activeIndex!==this.props.activeIndex;
+    getContent(children){
+        let {activeIndex}=this.state;
+        return children.map((child,index)=>{
+            if(activeIndex===index){
+                return child
+            }
+        })
     }
     render(){
-        let {tabsArr,width,activeIndex,hasMore}=this.props;
+        let {activeIndex}=this.state,
+            {tabsMenu,hasMore,children,width}=this.props;
         return(
-            <div className="navTabsBox" style={{minWidth:width}}>
+            <div className="navTabsBox" style={{width:width}}>
                 <header>
                     <ul>
                         {
-                            tabsArr.map((item,i)=>{
+                            tabsMenu.map((item,i)=>{
                                 return (
                                     <li key={i}
                                         className={classname({hoverActive:activeIndex===i})}
@@ -51,12 +60,25 @@ class NavTabs extends React.Component{
                             </div>:null
                     }
                 </header>
-                <section>
-                    {this.props.children}
-                </section>
+                {this.getContent(children)}
             </div>
         )
     }
 }
 
-export default NavTabs
+class TabsItem extends React.Component {
+    static propTypes = {
+        children:PropTypes.node
+    };
+    render(){
+        const {children ,...props}=this.props;
+        return (
+            <section {...props} >
+                {children || ''}
+            </section>
+        )
+    }
+}
+Tabs.Item=TabsItem;
+
+export default Tabs
