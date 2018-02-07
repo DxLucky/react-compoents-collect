@@ -33,6 +33,9 @@ class Carousel extends React.Component{
             },intervalTime)
         )
     }
+	componentWillUnmount(){
+       this.setState = ()=> null;
+    }
     render(){
         let {imgIndex}=this.state,
             {carouselArr}=this.props,
