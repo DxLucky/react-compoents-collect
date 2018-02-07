@@ -120,7 +120,7 @@ module.exports={
         }),
         new HtmlWebpackPlugin({
             title:"Components-Collect",
-            template:"src/template.html",
+            template:"src/indexModal.html",
             // favicon:"asset/images/favicon.ico",
             inject:"body",
             chunks:["main","vendor"],
